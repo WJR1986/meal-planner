@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#294f3d"><meta name="description" content="A practical meal planner for one: cold work lunches, batch dinners, complete recipes and a no-waste shopping checklist.">
+<title>The Good Week · Meal planner</title>
+<style>
+:root{--paper:#f6f5ee;--surface:#fffef9;--ink:#233d30;--muted:#59675b;--line:#dce0d4;--green:#294f3d;--pale:#e8eddf;--yellow:#f0e7bd;--orange:#9b482a;--radius:20px;--shadow:0 12px 42px #22382c0c}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,a,input,summary{ -webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.45}button,.button{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:10px 16px;min-height:44px;font-weight:650;transition:background .15s,transform .15s}button:hover,.button:hover{background:var(--pale)}button:active{transform:translateY(1px)}button.primary,.button.primary{background:var(--green);color:white;border-color:var(--green)}a{color:var(--green);text-underline-offset:3px}.button{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}:focus-visible{outline:3px solid #b36b24;outline-offset:4px}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.17}h1{font-family:Georgia,serif;font-size:clamp(38px,5.5vw,64px);font-weight:400;letter-spacing:-2px;max-width:680px}h2{font-size:26px;letter-spacing:-.7px}h3{font-size:19px}small,.small{font-size:13px}.muted{color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:750}.skip{position:fixed;top:-100px;left:16px;z-index:30;background:white;padding:12px}.skip:focus{top:12px}.topbar{border-bottom:1px solid var(--line);background:var(--surface)}.topinner{max-width:1240px;margin:auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{text-decoration:none;display:flex;align-items:center;gap:12px;font-weight:800;font-size:21px;letter-spacing:-.7px}.brandmark{height:36px;width:36px;background:var(--green);border-radius:50% 50% 50% 14%;display:grid;place-items:center;color:#f5e6ae;font-family:Georgia,serif;font-size:25px}.topmeta{display:flex;align-items:center;gap:18px}.statusdot{display:inline-block;width:7px;height:7px;background:#568553;border-radius:50%;margin-right:6px}.shell{max-width:1240px;padding:0 32px 70px;margin:auto}.hero{padding:42px 0 32px;display:grid;grid-template-columns:1.8fr 1fr;align-items:center;gap:28px}.hero .eyebrow{margin-bottom:14px;color:var(--orange)}.hero p{margin-top:18px;max-width:590px;color:var(--muted)}.weeknote{padding:24px;background:var(--pale);border-radius:var(--radius);border:1px solid #d9e1ce;transform:rotate(1deg)}.weeknote h3{font-family:Georgia,serif;font-size:26px;font-weight:400;margin:12px 0}.notefooter{margin-top:20px;display:flex;gap:8px;flex-wrap:wrap}.pill{display:inline-flex;padding:4px 9px;align-items:center;gap:5px;background:var(--pale);border-radius:8px;color:var(--green);font-size:12px;font-weight:650}.weeknote .pill{background:#f6f7ed}.nav{display:flex;gap:6px;padding:7px;background:#e9ece2;border-radius:15px;position:sticky;top:10px;z-index:5;margin-bottom:32px;box-shadow:0 4px 10px #233d3006}.nav a{flex:1;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:9px;padding:11px 9px;min-height:48px;border-radius:10px;color:var(--muted);font-weight:650;font-size:14px;white-space:nowrap}.nav a[aria-current=page]{background:var(--surface);color:var(--green);box-shadow:0 2px 5px #243c3010}.nav svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.section-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}.section-head p{color:var(--muted);margin-top:7px}.tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}.weekgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}.day{padding:0;overflow:hidden;display:flex;flex-direction:column}.dayhead{padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}.dayhead h3{font-size:15px}.day.today{border-color:#708964}.day.today .dayhead{background:var(--pale)}.daybody{padding:18px;flex:1}.meal{padding-bottom:20px}.meal:last-child{padding:0}.meal .eyebrow{font-size:10px;letter-spacing:1.3px;color:var(--muted);display:flex;gap:7px;align-items:center;margin-bottom:9px}.meal .meal-link{display:block;border:0;background:none;text-align:left;padding:0;min-height:44px;font-size:17px;line-height:1.4;font-weight:650;border-radius:3px;width:100%}.meal-link:hover{text-decoration:underline}.dayfoot{border-top:1px solid var(--line);padding:14px 18px;background:#f5f6ee;font-size:12px;color:var(--muted)}.dayfoot b{display:block;color:var(--ink);margin-bottom:3px}.strip{display:flex;align-items:center;gap:18px;margin-top:20px;border:1px solid var(--line);padding:20px 24px;background:var(--surface);border-radius:var(--radius)}.strip-icon{font-size:27px}.strip>div{flex:1}.strip p{margin-top:4px;font-size:14px;color:var(--muted)}.bottomgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.bottomgrid .card p{color:var(--muted);margin-top:12px;font-size:14px}.text-link{display:inline-block;margin-top:15px;font-weight:650}.accent{background:var(--green);color:#fffef5;border-color:var(--green)}.accent p{color:#dae4d3!important}.accent .text-link{color:#f3df9e}.searchbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}.search{flex:1;min-width:200px;padding:12px 16px;border:1px solid #bac5b4;background:var(--surface);border-radius:12px;color:var(--ink)}.filters{display:flex;gap:7px;flex-wrap:wrap}.filters button{padding:9px 13px;font-size:13px}.filters button[aria-pressed=true]{background:var(--green);color:white;border-color:var(--green)}.recipe-card{position:relative;padding:0;overflow:hidden;display:flex;flex-direction:column}.recipe-art{height:90px;background:#e8ecdd;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;color:#486144}.recipe-art.lunch{background:#e9e3d7;color:#835d43}.recipe-art.prep{background:#dfe8e4;color:#476c62}.recipe-art.breakfast{background:#ece2e5;color:#835b6a}.recipe-num{font:italic 44px Georgia,serif;opacity:.6}.recipe-content{padding:24px;flex:1;display:flex;flex-direction:column;gap:12px}.recipe-content h3{font-size:21px;line-height:1.25}.recipe-content p{font-size:14px;color:var(--muted);flex:1}.recipe-bottom{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:4px}.star{font-size:23px;padding:5px 10px;min-width:44px;line-height:1}.star[aria-pressed=true]{color:#9b6000;background:#f8ebc8;border-color:#d7b970}.subtle{font-size:12px;color:var(--muted)}.empty{grid-column:1/-1;padding:45px;text-align:center;background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius)}.notice{border-left:3px solid #9b7134;background:#f3edd8;padding:14px 18px;border-radius:0 12px 12px 0;font-size:14px;margin:18px 0}.progressrow{display:flex;align-items:center;gap:12px;margin:12px 0 20px}.progressrow progress{accent-color:var(--green);flex:1;height:9px;border:0;border-radius:10px;overflow:hidden}progress::-webkit-progress-bar{background:#e1e5d9}progress::-webkit-progress-value{background:var(--green)}.shoppinggrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.group{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}.group h3{padding:18px 20px;background:#eef1e7;font-size:17px;border-bottom:1px solid var(--line)}.checkrow{display:flex;align-items:flex-start;gap:12px;padding:16px 20px;border-bottom:1px solid #e9ece2;cursor:pointer;min-height:56px}.checkrow:last-child{border-bottom:0}.checkrow input{width:20px;height:20px;accent-color:var(--green);flex-shrink:0;margin:3px 0 0;cursor:pointer}.checktext{flex:1;min-width:0}.checktext b{display:block;font-size:15px}.checktext .quantity{font-size:13px;display:block;color:var(--green);margin:3px 0}.checktext small{display:block;color:var(--muted);line-height:1.5}.checked .checktext b{text-decoration:line-through;color:var(--muted)}.checked{background:#f4f5ef}.prep-layout{max-width:850px;margin:auto}.prepday{margin-bottom:14px}.prepday summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:20px;background:var(--surface);border:1px solid var(--line);border-radius:15px;min-height:65px}.prepday summary::-webkit-details-marker{display:none}.prepday summary::after{content:'+';font-size:22px;line-height:1.2}.prepday[open] summary::after{content:'−'}.prepday summary small{display:block;margin-top:4px;color:var(--muted)}.prepday[open] summary{border-radius:15px 15px 0 0;background:#edf1e6}.preptasks{border:1px solid var(--line);border-top:0;border-radius:0 0 15px 15px;overflow:hidden;background:var(--surface)}.count{font-size:12px;font-weight:400;color:var(--muted);margin-left:8px}.freezer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.stock-num{font:58px/1.2 Georgia,serif;margin:20px 0 5px}.counter{display:flex;align-items:center;gap:10px;margin-top:20px}.counter button{font-size:22px;padding:5px 14px}.counter span{font-size:13px;color:var(--muted)}.stock-card h3{min-height:46px}.helpgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.helpgrid p,.helpgrid li{font-size:14px;color:var(--muted);margin-top:10px}.helpgrid ul{padding-left:20px}.footer{display:flex;justify-content:space-between;gap:20px;padding-top:28px;margin-top:36px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.footer button{border:0;background:transparent;padding:0 4px;min-height:30px;font-size:12px;text-decoration:underline}.dialog{border:1px solid var(--line);border-radius:24px;width:min(900px,calc(100% - 32px));max-height:90dvh;padding:0;color:var(--ink);background:var(--surface);box-shadow:0 30px 100px #182d3550}.dialog::backdrop{background:#172b24a8;backdrop-filter:blur(3px)}.dialog-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--surface);border-bottom:1px solid var(--line);gap:10px}.dialog-body{padding:28px 32px}.dialog-title{font:38px/1.1 Georgia,serif;letter-spacing:-1px;margin:12px 0}.recipe-meta{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.recipe-columns{display:grid;grid-template-columns:1fr 1.45fr;gap:32px;margin-top:28px}.ingredient-list{padding-left:20px;font-size:15px}.ingredient-list li{padding:6px 0;border-bottom:1px solid var(--line)}.steps .checkrow{padding:14px 0;border-bottom:1px solid var(--line);background:transparent}.steps .checktext{font-size:15px}.step-number{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;margin-bottom:5px}.steps .checked .checktext{color:var(--muted);text-decoration:line-through}.storage{margin-top:24px;background:var(--pale);padding:20px;border-radius:14px;font-size:14px}.storage h3{font-size:16px;margin-bottom:10px}.cookview{background:var(--pale);padding:28px;border-radius:18px;margin-top:24px}.cookview p{font:26px/1.55 Georgia,serif;margin:20px 0 28px}.cooknav{display:flex;justify-content:space-between;gap:12px}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:12px 22px;background:#233d30;color:white;border-radius:12px;z-index:50;box-shadow:var(--shadow);max-width:90%;font-size:14px;pointer-events:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}.printonly{display:none}
+#main{scroll-margin-top:95px}
+@media(max-width:380px){.topinner{gap:8px}.brand{font-size:17px;gap:8px}.brandmark{width:30px;height:30px}.topmeta button{font-size:12px;padding:8px}}
+@media(max-width:1000px){.weekgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.freezer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1.4fr 1fr}.dayfoot{min-height:90px}}
+@media(max-width:640px){.topinner{padding:16px 20px}.brand{font-size:19px}.topmeta .small{display:none}.shell{padding:0 18px 100px}#main{scroll-margin-top:20px}.hero{grid-template-columns:1fr;padding:30px 0 24px;gap:22px}h1{font-size:42px;letter-spacing:-1.6px}.hero p{font-size:15px;margin-top:14px}.weeknote{transform:none;padding:18px 20px}.weeknote h3{font-size:23px;margin:7px 0}.weeknote p{margin-top:5px;font-size:14px}.notefooter{margin-top:13px}.nav{position:fixed;top:auto;bottom:0;left:0;right:0;margin:0;border-radius:16px 16px 0 0;padding:7px 5px max(7px,env(safe-area-inset-bottom));border:1px solid var(--line);gap:1px;box-shadow:0 -4px 20px #203b3010}.nav a{font-size:10px;flex-direction:column;gap:4px;padding:7px 3px;min-width:0;min-height:55px}.nav svg{height:21px;width:21px}.section-head{align-items:flex-start;flex-wrap:wrap}h2{font-size:24px}.section-head p{font-size:14px}.weekgrid,.cards,.shoppinggrid,.bottomgrid,.helpgrid{grid-template-columns:1fr}.dayhead{padding:14px 18px}.daybody{display:grid;grid-template-columns:1fr 1fr;gap:20px}.meal{padding:0}.meal-link{font-size:16px!important}.dayfoot{min-height:auto}.strip{padding:18px;flex-wrap:wrap;gap:12px}.strip-icon{display:none}.strip>div{flex-basis:100%}.strip .button{width:100%}.bottomgrid .card{padding:22px}.freezer-grid{gap:12px}.stock-card{padding:18px 14px}.stock-card h3{font-size:17px}.stock-num{font-size:46px}.counter{gap:7px;flex-wrap:wrap}.counter span{flex-basis:100%;order:3}.counter button{flex:1}.dialog{width:100%;max-width:100%;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}.dialog-body{padding:24px 20px 40px}.dialog-head{padding:12px 16px}.dialog-title{font-size:32px}.recipe-columns{grid-template-columns:1fr;gap:24px}.cookview{padding:20px}.cookview p{font-size:24px}.toast{bottom:85px;width:max-content;max-width:90%}.footer{flex-direction:column;gap:8px}.searchbar .filters{width:100%}.search{min-width:0;width:100%}.prepday summary{padding:17px}.checkrow{padding:16px}.topmeta button{font-size:13px;padding:8px 12px}.recipe-art{height:75px}.recipe-content{padding:21px}.recipe-content h3{font-size:22px}}
+@media(max-width:380px){.topinner{gap:8px}.brand{font-size:17px;gap:8px}.brandmark{width:30px;height:30px}.topmeta button{font-size:12px;padding:8px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media print{body{background:white;font-size:11pt;color:#111}.topbar,.hero,.nav,.footer,.tools,.searchbar,.noprint,.toast{display:none!important}.shell{max-width:none;margin:0;padding:0}.card,.group,.strip{box-shadow:none;break-inside:avoid}.weekgrid{grid-template-columns:repeat(2,1fr)}.shoppinggrid{grid-template-columns:repeat(2,1fr)}.printonly{display:block}.section-head{margin-top:12px}.dialog{position:static;max-height:none!important;height:auto!important;width:100%;border:0;overflow:visible;box-shadow:none}.dialog-head{display:none}.dialog-body{padding:0}.dialog::backdrop{display:none}.recipe-columns{grid-template-columns:1fr 1.4fr}.recipe-columns .checkrow{break-inside:avoid}.print-recipe .shell,.print-recipe .topbar{display:none}.print-recipe .dialog{display:block}.print-recipe .cookview{display:none!important}.print-recipe .recipe-columns{display:grid!important}.prepday{break-inside:avoid}.helpgrid{grid-template-columns:1fr 1fr}button{color:#111;background:white}.printonly h1{font-size:28px;letter-spacing:0}.stock-card h3{min-height:0}a{color:#111;text-decoration:none}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="topbar"><div class="topinner"><a href="#week" class="brand"><span class="brandmark" aria-hidden="true">g</span>The Good Week<span class="sr-only"> home</span></a><div class="topmeta"><span class="small muted" id="save-status"><span class="statusdot"></span>Saved on this device</span><button data-action="help">How to use</button></div></div></header>
+<div class="shell">
+<section class="hero" aria-label="Your meal planner"><div><div class="eyebrow">A little prep. A better week.</div><h1>Good food.<br>Less everyday effort.</h1><p>Filling cold lunches, comforting dinners and a freezer that does some of the work. Your practical plan for one.</p></div><aside class="weeknote"><div class="eyebrow">Your week, sorted</div><h3>Make more of what you buy.</h3><p>Shared ingredients. Whole tins. A home for the leftovers.</p><div class="notefooter"><span class="pill">5 cold lunches</span><span class="pill">5 dinners</span><span class="pill">5 extra mains</span></div></aside></section>
+<nav class="nav" aria-label="Main navigation">
+<a href="#week" data-view="week"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/></svg>This week</a>
+<a href="#recipes" data-view="recipes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5C8 2 4 3 2 4v16c4-2 7-1 10 1 3-2 6-3 10-1V4c-2-1-6-2-10 1Zm0 0v16"/></svg>Recipes</a>
+<a href="#shopping" data-view="shopping"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l2 14H3L5 7Zm3 0V6a4 4 0 0 1 8 0v1"/></svg>Shopping</a>
+<a href="#prep" data-view="prep"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="15" height="17" rx="2"/><path d="M9 2h6v4H9zM8 11l2 2 3-3m-5 7h8"/></svg>Prep plan</a>
+<a href="#freezer" data-view="freezer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7M9 4l3 3 3-3M9 20l3-3 3 3M3 10l4-1-1-4m12 14-1-4 4-1M3 14l4 1-1 4m12-14-1 4 4 1"/></svg>Freezer</a>
+</nav>
+<main id="main" tabindex="-1"><div class="printonly"><h1>The Good Week</h1><p>Meal plan for one · Five weekdays + five extra freezer mains</p></div><div id="content"></div></main>
+<footer class="footer"><span>Made for real life. One person · UK measures · No morning prep.</span><span><button data-action="help">Storage & help</button> · <button data-action="reset">Reset checklists</button></span></footer>
+</div>
+<dialog class="dialog" id="recipe-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><span class="eyebrow">Your recipe book</span><div class="tools"><button data-action="print-recipe" aria-label="Print this recipe">Print</button><button data-action="close" aria-label="Close recipe">Close ×</button></div></div><div id="dialog-content" class="dialog-body"></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><p style="padding:30px">Please enable JavaScript to use the interactive meal plan. The downloadable data.json file also contains all recipes and shopping information.</p></noscript>
+<script id="meal-data" type="application/json">{
+  "recipes": [
+    {
+      "id": "base",
+      "title": "Shared beef & vegetable base",
+      "kind": "Prep",
+      "time": 25,
+      "yieldText": "Makes the base for 4 dinners",
+      "intro": "Cook once, then split between bolognese and chilli.",
+      "ingredients": [
+        "500g lean beef mince",
+        "200g chopped onion",
+        "200g grated carrot",
+        "2 garlic cloves, crushed",
+        "2 tsp olive or rapeseed oil"
+      ],
+      "steps": [
+        "Heat the oil in a large pan. Soften the onion and carrot for 7–8 minutes.",
+        "Add the mince and brown thoroughly, breaking up any lumps. Add garlic and cook for 1 minute.",
+        "Divide the cooked mixture equally. Use half in the bolognese and half in the chilli; finish both sauces now."
+      ],
+      "storage": "Store the finished sauces using their recipe instructions.",
+      "note": "The mince, onion and carrot here are already included in the shopping list. Do not buy them again for the two sauces."
+    },
+    {
+      "id": "bolognese",
+      "title": "Beef & lentil bolognese",
+      "kind": "Dinner",
+      "time": 35,
+      "yieldText": "2 sauce portions · eat 1, freeze 1",
+      "intro": "A familiar sauce with extra vegetables and red lentils.",
+      "ingredients": [
+        "½ of the cooked shared beef base",
+        "1 × 400g tin chopped tomatoes",
+        "50g dry red lentils, rinsed",
+        "200ml water, plus more if needed",
+        "1 tsp Italian herbs; black pepper",
+        "For this week’s plate: 75g dry pasta + 150g broccoli"
+      ],
+      "steps": [
+        "Make the shared beef base first and put half in a saucepan.",
+        "Add tomatoes, lentils, water, herbs and pepper. Bring to a gentle simmer.",
+        "Simmer for 25–30 minutes, stirring occasionally, until the lentils are tender. Add a splash of water if the sauce gets too thick.",
+        "Split into 2 portions. On Monday, cook 75g pasta according to the packet and cook 150g broccoli; serve with 1 hot sauce portion."
+      ],
+      "storage": "Saturday: cool both sauce portions promptly and freeze separately. Move Monday’s portion to the fridge on Sunday evening. Reheat once until steaming hot throughout. Keep the second portion for another week.",
+      "note": "Open “Shared beef & vegetable base” for the first step. Pasta and broccoli are only allocated for this week’s serving."
+    },
+    {
+      "id": "chilli",
+      "title": "Smoky beef & bean chilli",
+      "kind": "Dinner",
+      "time": 35,
+      "yieldText": "2 sauce portions · eat 1, freeze 1",
+      "intro": "A whole tin of kidney beans goes into this generous batch.",
+      "ingredients": [
+        "½ of the cooked shared beef base",
+        "1 pepper, diced",
+        "1 × 400g tin kidney beans, drained and rinsed",
+        "1 × 400g tin chopped tomatoes",
+        "100ml water",
+        "1 tsp ground cumin + 1 tsp smoked paprika",
+        "¼–½ tsp chilli powder, to taste",
+        "For this week’s plate: 70g dry rice + 200g broccoli"
+      ],
+      "steps": [
+        "Put half the cooked shared beef base in a pan.",
+        "Add the pepper, beans, tomatoes, water and spices.",
+        "Simmer for 25–30 minutes, stirring occasionally, until the pepper is tender. Split into 2 portions.",
+        "On Thursday, cook 70g dry rice according to the packet or rice cooker instructions and cook 200g broccoli. Serve with 1 hot chilli portion."
+      ],
+      "storage": "Saturday: cool and freeze both sauce portions separately. Move Thursday’s portion to the fridge on Wednesday evening. Reheat once until steaming hot. Keep the other portion frozen for another week.",
+      "note": "The shared beef base is a separate recipe. Cook dinner rice fresh; it is not the cold rice lunch."
+    },
+    {
+      "id": "curry",
+      "title": "Tomato chicken & chickpea curry",
+      "kind": "Dinner",
+      "time": 40,
+      "yieldText": "3 curry portions · eat 1, freeze 2",
+      "intro": "A colourful curry using a full tin of chickpeas.",
+      "ingredients": [
+        "500g raw chicken breast, diced",
+        "150g chopped onion",
+        "150g carrot, finely diced",
+        "1 pepper, chopped",
+        "2 garlic cloves, crushed",
+        "2 tbsp curry paste of your choice",
+        "1 × 400g tin chickpeas, drained and rinsed",
+        "1 × 400g tin chopped tomatoes",
+        "100ml water + 1 tsp oil",
+        "For this week’s plate: 70g dry rice + 150g broccoli"
+      ],
+      "steps": [
+        "Heat the oil. Soften the onion and carrot for 7–8 minutes.",
+        "Add chicken, pepper, garlic and curry paste. Stir for 3 minutes.",
+        "Add chickpeas, tomatoes and water. Simmer for 20–25 minutes until the chicken is fully cooked and the vegetables are tender. Add water if needed.",
+        "Divide into 3 portions. On Tuesday, cook the rice according to its packet and cook the broccoli to serve with 1 portion."
+      ],
+      "storage": "Sunday: cool and freeze all 3 curry portions. Move Tuesday’s portion to the fridge on Monday evening. Reheat once until steaming hot throughout. Leave the other 2 portions frozen.",
+      "note": "Choose the heat level you enjoy. Check paste labels for allergens and storage instructions."
+    },
+    {
+      "id": "traybake",
+      "title": "Smoky sausage & vegetable traybake",
+      "kind": "Dinner",
+      "time": 50,
+      "yieldText": "1 dinner",
+      "intro": "One tray, familiar flavours and plenty of vegetables.",
+      "ingredients": [
+        "2 sausages",
+        "300g potatoes, cut into 2cm pieces",
+        "150g carrot, cut into small chunks",
+        "100g onion, cut into wedges",
+        "1 pepper, chopped",
+        "1 tsp oil + 1 tsp smoked paprika",
+        "Black pepper"
+      ],
+      "steps": [
+        "Heat the oven to 200°C fan / 220°C conventional.",
+        "Toss the potatoes and carrot with oil, paprika and pepper in a roasting tin. Roast for 15 minutes.",
+        "Add the sausages, onion and pepper. Roast for another 25–30 minutes, turning halfway, until the sausages are cooked through and vegetables are tender. Follow the sausage packet if it needs longer."
+      ],
+      "storage": "Cook fresh on Wednesday. Freeze the unused raw sausages on shopping day, following the packet, and label them.",
+      "note": "A little midweek cooking gives you a change from reheated batch meals."
+    },
+    {
+      "id": "fishcakes",
+      "title": "Lemon white fishcakes",
+      "kind": "Dinner",
+      "time": 60,
+      "yieldText": "4 large cakes · 2 dinners",
+      "intro": "Crisp breadcrumbs, soft potato and boneless white fish.",
+      "ingredients": [
+        "400g boneless, skinless white fish",
+        "500g potatoes, peeled weight",
+        "Zest of 1 lemon + 1 tbsp lemon juice",
+        "Black pepper",
+        "1 egg, beaten",
+        "60g fresh breadcrumbs",
+        "2 tsp oil",
+        "For Friday’s plate: 160g peas + 150g carrot"
+      ],
+      "steps": [
+        "Boil the potatoes for 15–20 minutes until tender. Drain well and mash without milk. Let the mash cool.",
+        "Cook the fish according to its packet. Drain, check for any remaining bones and flake.",
+        "Combine fish, mash, lemon zest, juice and pepper. Shape into 4 large cakes and chill for 20 minutes.",
+        "Heat the oven to 200°C fan / 220°C conventional. Dip each cake in beaten egg, then breadcrumbs. Place on a lined tray and lightly brush with oil.",
+        "Bake for 20–25 minutes, turning carefully, until golden and hot throughout. Cool promptly if freezing.",
+        "On Friday, reheat 2 defrosted cakes at 180°C fan / 200°C conventional for about 20–25 minutes, until steaming hot throughout. Cook 160g peas and 150g carrots to serve."
+      ],
+      "storage": "Saturday: cool and freeze all 4 cooked cakes, separated with baking paper in 2 packs of 2. Move Friday’s pack into the fridge Thursday evening. Reheat only once. Keep the other pair for another week.",
+      "note": "The potato amounts are edible weights: buy a little extra if peeling produces substantial waste."
+    },
+    {
+      "id": "chicken",
+      "title": "Lunch chicken prep",
+      "kind": "Prep",
+      "time": 30,
+      "yieldText": "3 lunch portions · cook 2, freeze 1 raw",
+      "intro": "Keeps raw and cooked chicken quantities clear.",
+      "ingredients": [
+        "500g raw chicken breast, divided into 3 roughly equal portions",
+        "1 tsp oil",
+        "½ tsp smoked paprika + black pepper"
+      ],
+      "steps": [
+        "On Sunday, put 1 raw portion (about 165g) into a labelled freezer bag, in thin strips, and freeze straight away for Friday’s noodles.",
+        "Heat the oven to 190°C fan / 210°C conventional. Coat the other 2 portions (about 335g raw in total) with oil, paprika and pepper.",
+        "Roast for about 20–25 minutes, until fully cooked throughout; thicker breasts may need longer.",
+        "Cool promptly and divide the cooked chicken equally between Monday’s Caesar pasta and Tuesday’s pesto pasta. Refrigerate the finished lunches."
+      ],
+      "storage": "Prepare the two cooked portions on Sunday evening and eat within 48 hours. Defrost the raw Friday portion in the fridge from Wednesday evening; cook within 24 hours of being fully defrosted on Thursday.",
+      "note": "Use separate utensils for raw chicken, and do not wash it. Fully cooked chicken should have no pink meat and juices should run clear; a food thermometer can confirm doneness."
+    },
+    {
+      "id": "caesar",
+      "title": "Chicken Caesar pasta salad",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 filling cold lunch",
+      "intro": "The Caesar you enjoy, made more filling with chicken, pasta and peas.",
+      "ingredients": [
+        "75g dry pasta",
+        "1 cooked portion from Lunch chicken prep",
+        "80g frozen peas",
+        "100g cherry tomatoes, halved",
+        "½ small romaine lettuce, washed and dried",
+        "1 tbsp Caesar dressing + 30g plain yoghurt",
+        "10g Parmesan, grated",
+        "20g bread, cubed"
+      ],
+      "steps": [
+        "Cook the pasta according to its packet. Cook the peas, drain both and cool promptly.",
+        "Toast the bread cubes in a dry frying pan until crisp, then cool.",
+        "Combine pasta, peas, chicken and tomatoes in a lunch box. Mix Caesar dressing with yoghurt in a small separate pot.",
+        "Pack dry lettuce, Parmesan and croutons separately or in separate compartments to preserve their texture. Refrigerate. Combine at lunchtime."
+      ],
+      "storage": "Make Sunday evening and eat Monday. Keep the lunch chilled at work or use an insulated bag with ice packs.",
+      "note": "No preparation before work. The dressing and croutons are packed the night before."
+    },
+    {
+      "id": "pesto",
+      "title": "Creamy pesto chicken pasta",
+      "kind": "Lunch",
+      "time": 20,
+      "yieldText": "1 cold lunch + carrot sticks",
+      "intro": "Creamy pesto, chicken and tomatoes, with a crunchy side.",
+      "ingredients": [
+        "75g dry pasta",
+        "1 cooked portion from Lunch chicken prep",
+        "80g frozen peas",
+        "100g cherry tomatoes, halved",
+        "20g pesto",
+        "40g plain yoghurt",
+        "A squeeze of lemon or a little water",
+        "100g carrot, cut into sticks"
+      ],
+      "steps": [
+        "Cook the pasta and peas, drain and cool promptly.",
+        "Stir together pesto and yoghurt, loosening with a little water or lemon juice.",
+        "Combine the sauce with pasta, peas, chicken and tomatoes. Pack carrot sticks alongside and refrigerate."
+      ],
+      "storage": "Make Sunday evening and eat Tuesday lunchtime, within 48 hours of preparation. Keep chilled during travel and at work.",
+      "note": "Freeze leftover pesto in small portions if the jar’s opened storage life would otherwise be exceeded."
+    },
+    {
+      "id": "potato",
+      "title": "Egg & potato Caesar salad",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 filling cold lunch",
+      "intro": "A second take on Caesar with eggs, potatoes and peas.",
+      "ingredients": [
+        "200g potatoes, cut into bite-sized pieces",
+        "2 eggs",
+        "80g frozen peas",
+        "50g cherry tomatoes, halved",
+        "½ small romaine lettuce, washed and dried",
+        "1 tbsp Caesar dressing + 30g plain yoghurt",
+        "10g Parmesan, grated",
+        "20g bread, cubed",
+        "100g carrot sticks"
+      ],
+      "steps": [
+        "Boil potatoes for about 12–15 minutes until tender; drain and cool. In another pan, boil the eggs for 10–12 minutes until hard-boiled, cool in cold water and peel.",
+        "Cook the peas and cool promptly. Toast the bread cubes in a dry pan and cool.",
+        "Mix the Caesar dressing and yoghurt in a separate pot. Pack potato, peas, quartered eggs and tomatoes together, with dry lettuce and Parmesan alongside.",
+        "Pack the dressing, croutons and carrot sticks. Refrigerate everything except the dry croutons. Combine at lunch."
+      ],
+      "storage": "Prepare Tuesday evening and eat Wednesday. Keep chilled; do not freeze the assembled salad.",
+      "note": ""
+    },
+    {
+      "id": "rice",
+      "title": "Cold egg-fried rice",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 cold lunch",
+      "intro": "A simple rice box with eggs, peas and carrot.",
+      "ingredients": [
+        "70g dry rice",
+        "2 eggs, beaten",
+        "100g frozen peas",
+        "100g carrot, finely diced",
+        "1 tsp light soy sauce",
+        "½ tsp sesame oil"
+      ],
+      "steps": [
+        "Cook the rice according to the packet or rice cooker instructions.",
+        "In a frying pan, soften carrot and peas with a splash of water. Let excess water evaporate.",
+        "Add sesame oil and eggs; stir until the egg is fully set. Stir in the cooked rice and soy sauce.",
+        "Immediately spread into a clean, shallow container to cool quickly. Refrigerate within 1 hour of cooking. Do not leave it in the rice cooker to cool."
+      ],
+      "storage": "Make Wednesday evening and eat cold on Thursday, within 24 hours of cooking. Keep refrigerated, including at work; use ice packs for the journey. This lunch is not intended for batch fridge storage.",
+      "note": "Rice has a shorter storage window than the other lunches. Only cook this lunch the evening before."
+    },
+    {
+      "id": "noodles",
+      "title": "Chicken chow mein noodle salad",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 generous cold lunch",
+      "intro": "The whole tin of beansprouts goes in: no half-tin left behind.",
+      "ingredients": [
+        "75g dry egg noodles",
+        "1 raw chicken portion (about 165g), defrosted",
+        "1 standard tin beansprouts, drained (use the whole tin)",
+        "50g onion, thinly sliced",
+        "50g carrot, cut into thin strips",
+        "1 tsp light soy sauce",
+        "½ tsp dark soy sauce, optional",
+        "½ tsp sesame oil + 1 tsp cooking oil",
+        "A squeeze of lemon"
+      ],
+      "steps": [
+        "Cook the egg noodles according to their packet and drain.",
+        "Heat the cooking oil in a frying pan or wok. Stir-fry the chicken strips until fully cooked throughout.",
+        "Add the onion, carrot and the whole drained tin of beansprouts. Stir-fry for 3–4 minutes, following any extra cooking instruction on the tin.",
+        "Toss with noodles, soy sauces, sesame oil and lemon. Transfer to a shallow container, cool promptly and refrigerate."
+      ],
+      "storage": "Move the frozen raw chicken to the fridge Wednesday evening. Cook this lunch Thursday evening, within 24 hours of the chicken being fully defrosted. Eat Friday, kept chilled.",
+      "note": "If your tin is especially large, this is a very generous lunch. The plan deliberately uses all of it."
+    },
+    {
+      "id": "oats",
+      "title": "Berry & walnut overnight oats",
+      "kind": "Breakfast",
+      "time": 5,
+      "yieldText": "1 breakfast · repeat on weekdays",
+      "intro": "Prep in the evening; grab from the fridge in the morning.",
+      "ingredients": [
+        "40g oats",
+        "150g plain yoghurt",
+        "80g berries, fresh or frozen",
+        "15g unsalted walnuts",
+        "A splash of water"
+      ],
+      "steps": [
+        "Check frozen berry packaging: if it says to cook before eating, cook the berries as directed and cool promptly first.",
+        "Mix oats, yoghurt, berries and a splash of water in a covered container. Refrigerate overnight.",
+        "Pack walnuts in a small pot or sprinkle on top in the evening. Eat the next morning."
+      ],
+      "storage": "Prepare the evening before, rather than making all five at once. Follow yoghurt and berry storage labels.",
+      "note": "Buy 200g oats, 750g yoghurt, 400g berries and 75g walnuts for five breakfasts. Add one apple or banana each day."
+    }
+  ],
+  "shopping": [
+    {
+      "category": "Meat, fish & eggs",
+      "items": [
+        {
+          "id": "g0-0",
+          "name": "Chicken breast",
+          "quantity": "1kg raw",
+          "use": "500g curry; 500g split across the 3 chicken lunches."
+        },
+        {
+          "id": "g0-1",
+          "name": "Lean beef mince",
+          "quantity": "500g",
+          "use": "All in the shared base: half for each sauce."
+        },
+        {
+          "id": "g0-2",
+          "name": "Sausages",
+          "quantity": "1 pack (need 2)",
+          "use": "Freeze the remaining raw sausages individually on shopping day."
+        },
+        {
+          "id": "g0-3",
+          "name": "Boneless, skinless white fish",
+          "quantity": "400g",
+          "use": "All in 4 fishcakes. Extra frozen fillets stay frozen."
+        },
+        {
+          "id": "g0-4",
+          "name": "Eggs",
+          "quantity": "6",
+          "use": "2 potato salad, 2 rice, 1 fishcakes; 1 for the weekend."
+        }
+      ]
+    },
+    {
+      "category": "Vegetables & fruit",
+      "items": [
+        {
+          "id": "g1-0",
+          "name": "Potatoes",
+          "quantity": "1kg edible weight",
+          "use": "500g fishcakes, 300g traybake, 200g salad. Allow a little extra for peeling."
+        },
+        {
+          "id": "g1-1",
+          "name": "Carrots",
+          "quantity": "1kg edible weight",
+          "use": "200g beef base; 150g curry; 150g traybake; 150g Friday side; 100g Tue sticks; 100g Wed sticks; 100g rice; 50g noodles."
+        },
+        {
+          "id": "g1-2",
+          "name": "Onions",
+          "quantity": "About 4 (500g prepared)",
+          "use": "200g base; 150g curry; 100g traybake; 50g noodles. Chop and freeze any surplus."
+        },
+        {
+          "id": "g1-3",
+          "name": "Peppers",
+          "quantity": "3",
+          "use": "1 each in chilli, curry and traybake."
+        },
+        {
+          "id": "g1-4",
+          "name": "Cherry tomatoes",
+          "quantity": "250g",
+          "use": "100g Monday, 100g Tuesday, 50g Wednesday."
+        },
+        {
+          "id": "g1-5",
+          "name": "Small romaine lettuce",
+          "quantity": "1",
+          "use": "Half Monday, half Wednesday; keep the remaining leaves dry and refrigerated."
+        },
+        {
+          "id": "g1-6",
+          "name": "Lemon",
+          "quantity": "1",
+          "use": "Zest + 1 tbsp juice in fishcakes; remaining juice for lunches. Use water to loosen pesto if needed."
+        },
+        {
+          "id": "g1-7",
+          "name": "Garlic",
+          "quantity": "1 bulb (need 4 cloves)",
+          "use": "2 cloves in the base; 2 in curry. Keep remaining cloves for next week."
+        },
+        {
+          "id": "g1-8",
+          "name": "Apples or bananas",
+          "quantity": "5",
+          "use": "One each weekday."
+        }
+      ]
+    },
+    {
+      "category": "Frozen",
+      "items": [
+        {
+          "id": "g2-0",
+          "name": "Peas",
+          "quantity": "500g",
+          "use": "80g each Mon/Tue/Wed lunch; 100g Thu lunch; 160g Friday dinner."
+        },
+        {
+          "id": "g2-1",
+          "name": "Broccoli",
+          "quantity": "500g",
+          "use": "150g Mon dinner; 150g Tue dinner; 200g Thu dinner."
+        },
+        {
+          "id": "g2-2",
+          "name": "Berries",
+          "quantity": "400g",
+          "use": "80g per weekday breakfast. Follow any cooking instruction on the pack."
+        }
+      ]
+    },
+    {
+      "category": "Tins & jars",
+      "items": [
+        {
+          "id": "g3-0",
+          "name": "Chopped tomatoes",
+          "quantity": "3 × 400g tins",
+          "use": "1 each for bolognese, chilli and curry."
+        },
+        {
+          "id": "g3-1",
+          "name": "Kidney beans",
+          "quantity": "1 × 400g tin",
+          "use": "Drain and rinse; whole tin in chilli."
+        },
+        {
+          "id": "g3-2",
+          "name": "Chickpeas",
+          "quantity": "1 × 400g tin",
+          "use": "Drain and rinse; whole tin in curry."
+        },
+        {
+          "id": "g3-3",
+          "name": "Beansprouts",
+          "quantity": "1 standard tin",
+          "use": "Drain; whole tin in Friday’s noodles."
+        },
+        {
+          "id": "g3-4",
+          "name": "Pesto",
+          "quantity": "Need 20g",
+          "use": "Buy a small jar if needed; freeze surplus in portions according to its label."
+        },
+        {
+          "id": "g3-5",
+          "name": "Curry paste",
+          "quantity": "Need 2 tbsp",
+          "use": "Choose your preferred heat; refrigerate/freeze surplus as labelled."
+        },
+        {
+          "id": "g3-6",
+          "name": "Caesar dressing",
+          "quantity": "Need 2 tbsp",
+          "use": "1 tbsp for each Caesar lunch. Check what you already have."
+        }
+      ]
+    },
+    {
+      "category": "Dairy & bread",
+      "items": [
+        {
+          "id": "g4-0",
+          "name": "Plain yoghurt",
+          "quantity": "1kg",
+          "use": "750g breakfasts + 100g dressings; 150g for weekend use. Two 500g tubs can help with opened shelf life."
+        },
+        {
+          "id": "g4-1",
+          "name": "Parmesan",
+          "quantity": "Need 20g",
+          "use": "10g for each Caesar lunch. Grate and freeze surplus."
+        },
+        {
+          "id": "g4-2",
+          "name": "Sliced bread",
+          "quantity": "Small loaf (need 100g)",
+          "use": "60g crumbs + 40g croutons. Freeze remaining slices."
+        }
+      ]
+    },
+    {
+      "category": "Dry goods & cupboard",
+      "items": [
+        {
+          "id": "g5-0",
+          "name": "Pasta",
+          "quantity": "500g pack (use 225g)",
+          "use": "75g each Monday dinner, Monday lunch and Tuesday lunch."
+        },
+        {
+          "id": "g5-1",
+          "name": "Rice",
+          "quantity": "500g pack (use 210g)",
+          "use": "70g each Tuesday dinner, Thursday lunch and Thursday dinner."
+        },
+        {
+          "id": "g5-2",
+          "name": "Egg noodles",
+          "quantity": "1 pack (use 75g)",
+          "use": "Keep unused dry noodles for another week."
+        },
+        {
+          "id": "g5-3",
+          "name": "Red lentils",
+          "quantity": "1 bag (use 50g)",
+          "use": "Bolognese; store the remaining dry lentils."
+        },
+        {
+          "id": "g5-4",
+          "name": "Oats",
+          "quantity": "Need 200g",
+          "use": "40g per breakfast; buy a larger pack if the unit price is better."
+        },
+        {
+          "id": "g5-5",
+          "name": "Unsalted walnuts",
+          "quantity": "Need 75g",
+          "use": "15g per breakfast; keep surplus sealed."
+        },
+        {
+          "id": "g5-6",
+          "name": "Olive or rapeseed oil",
+          "quantity": "Need about 8 tsp",
+          "use": "Shared base, curry, traybake, fishcakes, roast chicken and noodles."
+        },
+        {
+          "id": "g5-7",
+          "name": "Light soy sauce",
+          "quantity": "Need 2 tsp",
+          "use": "1 tsp rice + 1 tsp noodles."
+        },
+        {
+          "id": "g5-8",
+          "name": "Dark soy sauce (optional)",
+          "quantity": "Need ½ tsp",
+          "use": "For noodles; skip if you do not already have it."
+        },
+        {
+          "id": "g5-9",
+          "name": "Sesame oil",
+          "quantity": "Need 1 tsp",
+          "use": "½ tsp each rice and noodles."
+        },
+        {
+          "id": "g5-10",
+          "name": "Italian herbs",
+          "quantity": "Need 1 tsp",
+          "use": "Bolognese."
+        },
+        {
+          "id": "g5-11",
+          "name": "Smoked paprika",
+          "quantity": "Need 2½ tsp",
+          "use": "Chilli, traybake and lunch chicken."
+        },
+        {
+          "id": "g5-12",
+          "name": "Ground cumin",
+          "quantity": "Need 1 tsp",
+          "use": "Chilli."
+        },
+        {
+          "id": "g5-13",
+          "name": "Chilli powder",
+          "quantity": "Need ¼–½ tsp",
+          "use": "Adjust to taste."
+        },
+        {
+          "id": "g5-14",
+          "name": "Black pepper",
+          "quantity": "A little",
+          "use": "Check the cupboard first."
+        }
+      ]
+    }
+  ],
+  "week": [
+    [
+      "Monday",
+      "caesar",
+      "bolognese",
+      "Move Tuesday’s curry into the fridge. Make overnight oats."
+    ],
+    [
+      "Tuesday",
+      "pesto",
+      "curry",
+      "Make Wednesday’s egg & potato salad and oats."
+    ],
+    [
+      "Wednesday",
+      "potato",
+      "traybake",
+      "Make Thursday’s rice lunch and oats. Move chilli and raw noodle chicken into the fridge."
+    ],
+    [
+      "Thursday",
+      "rice",
+      "chilli",
+      "Cook Friday’s noodles and make oats. Move 2 fishcakes into the fridge."
+    ],
+    [
+      "Friday",
+      "noodles",
+      "fishcakes",
+      "Enjoy your dinner; 5 extra main-meal portions are ready for another week."
+    ]
+  ],
+  "prep": [
+    [
+      "Shopping day",
+      "Before you cook",
+      [
+        [
+          "Check the cupboards",
+          "Tick anything you already have on the shopping list before buying. Check dates on chicken, fish, sausages and yoghurt."
+        ],
+        [
+          "Put the surplus away",
+          "Freeze extra raw sausages and bread. Keep larger frozen packs frozen. Allow room for shallow containers and label them."
+        ]
+      ]
+    ],
+    [
+      "Saturday",
+      "Build the freezer base",
+      [
+        [
+          "Cook the shared beef base",
+          "Finish both bolognese and chilli sauces. Cool and freeze all 4 portions individually."
+        ],
+        [
+          "Make the fishcakes",
+          "Bake all 4. Cool and freeze in 2 packs of 2. Label each pack with its name and cooking date."
+        ]
+      ]
+    ],
+    [
+      "Sunday evening",
+      "Set up Monday & Tuesday",
+      [
+        [
+          "Cook the curry",
+          "Divide into 3 portions. Cool promptly and freeze all three."
+        ],
+        [
+          "Prepare the lunch chicken",
+          "Cook 2 portions for Monday and Tuesday. Freeze the third portion RAW, sliced, for Friday’s noodles."
+        ],
+        [
+          "Pack the first two lunches",
+          "Make Caesar pasta and pesto pasta. Keep dressings/croutons separate where directed. Refrigerate; eat within 48 hours."
+        ],
+        [
+          "Move Monday’s bolognese to the fridge",
+          "Thaw in a covered container. Make Monday’s oats."
+        ]
+      ]
+    ],
+    [
+      "Monday evening",
+      "A quick freezer move",
+      [
+        [
+          "Thaw Tuesday’s curry",
+          "Move one portion to the fridge."
+        ],
+        [
+          "Make Tuesday’s overnight oats",
+          "Check the yoghurt’s opened storage instructions."
+        ]
+      ]
+    ],
+    [
+      "Tuesday evening",
+      "Prepare Wednesday’s lunch",
+      [
+        [
+          "Pack the egg & potato Caesar salad",
+          "Boil eggs and potatoes, cook peas, cool and pack. Keep croutons and dressing separate."
+        ],
+        [
+          "Make Wednesday’s overnight oats",
+          "Everything ready before bed."
+        ]
+      ]
+    ],
+    [
+      "Wednesday evening",
+      "Fresh dinner & rice prep",
+      [
+        [
+          "Cook the sausage traybake",
+          "While the oven is on, prepare Thursday’s rice lunch."
+        ],
+        [
+          "Make the cold egg-fried rice",
+          "Cool and refrigerate within 1 hour. Eat within 24 hours."
+        ],
+        [
+          "Thaw chilli and raw chicken",
+          "Move Thursday’s chilli and Friday’s raw chicken portion into the fridge. Keep raw chicken covered below ready-to-eat food."
+        ],
+        [
+          "Make Thursday’s overnight oats",
+          "Pack an apple or banana too."
+        ]
+      ]
+    ],
+    [
+      "Thursday evening",
+      "Friday is ready to go",
+      [
+        [
+          "Cook the chow mein lunch",
+          "Use the defrosted raw chicken and the WHOLE tin of beansprouts. Cool promptly and refrigerate."
+        ],
+        [
+          "Thaw Friday’s fishcakes",
+          "Move one pack of 2 cakes to the fridge."
+        ],
+        [
+          "Make Friday’s overnight oats",
+          "Keep lunch chilled during travel and at work."
+        ]
+      ]
+    ],
+    [
+      "Friday evening",
+      "Finish the week",
+      [
+        [
+          "Reheat 2 fishcakes and cook the sides",
+          "Serve with 160g peas and 150g carrots."
+        ],
+        [
+          "Check next week’s freezer stock",
+          "There should be 1 bolognese, 1 chilli, 2 curry portions and 1 fishcake dinner left if you cooked the complete plan. Update your actual stock in the Freezer section."
+        ]
+      ]
+    ]
+  ]
+}</script>
+<script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('meal-data').textContent);
+const $=s=>document.querySelector(s);
+const KEY='good-week-v1:'+location.pathname;
+const baseState=()=>({shopping:{},prep:{},steps:{},favourites:[],stock:{bolognese:0,chilli:0,curry:0,fishcakes:0}});
+let state=baseState(),storageOK=true;
+try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved&&typeof saved==='object'){for(const field of ['shopping','prep','steps'])if(saved[field]&&typeof saved[field]==='object'&&!Array.isArray(saved[field]))state[field]=saved[field];if(Array.isArray(saved.favourites))state.favourites=saved.favourites.filter(id=>DATA.recipes.some(r=>r.id===id));for(const id of Object.keys(state.stock)){const n=saved.stock?.[id];if(Number.isInteger(n)&&n>=0&&n<=999)state.stock[id]=n;}}localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){storageOK=false;updateSaveStatus();toast('Browser storage is unavailable. Changes last only while this page stays open.');}}
+function updateSaveStatus(){if(!storageOK)$('#save-status').textContent='Session only · storage unavailable';}
+updateSaveStatus();
+const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const byId=id=>DATA.recipes.find(r=>r.id===id);
+let view='week',query='',filter='All',remainingOnly=false,shopQuery='',currentRecipe=null,cookStep=null,returnFocus=null;
+let toastTimer;
+function toast(message){$('#toast').textContent=message;$('#toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').hidden=true,3500);}
+function recipeButton(id,label){return `<button class="meal-link" data-recipe="${id}">${escape(label||byId(id).title)} <span aria-hidden="true">↗</span></button>`;}
+function pageHead(title,description,actions=''){return `<div class="section-head"><div><h2>${title}</h2><p>${description}</p></div><div class="tools noprint">${actions}</div></div>`;}
+function renderWeek(){const today=new Date().toLocaleDateString('en-GB',{weekday:'long'});return pageHead('Your weekday menu','Everything has a place. Tap a meal for its full recipe.','<button data-action="print">Print week</button>')+`<div class="weekgrid">${DATA.week.map(([day,lunch,dinner,note])=>`<article class="card day ${today===day?'today':''}"><header class="dayhead"><h3>${day}</h3>${today===day?'<span class="pill">Today</span>':''}</header><div class="daybody"><div class="meal"><div class="eyebrow">◌ Cold lunch</div>${recipeButton(lunch)}</div><div class="meal"><div class="eyebrow">◒ Dinner</div>${recipeButton(dinner)}</div></div><div class="dayfoot"><b>Evening prep</b>${note}</div></article>`).join('')}</div><div class="strip"><span class="strip-icon" aria-hidden="true">◔</span><div><h3>A breakfast you can grab and go.</h3><p>Berry & walnut overnight oats each weekday, plus an apple or banana with lunch. Make the oats the evening before.</p></div><button class="primary" data-recipe="oats">Breakfast recipe ↗</button></div><div class="bottomgrid"><article class="card accent"><div class="eyebrow">A head start for next week</div><h3 style="margin-top:12px">Five extra mains, already made.</h3><p>The full batch makes 1 extra bolognese, 1 chilli, 2 curries and a fishcake dinner. Log them only once they’re in your freezer.</p><a class="text-link" href="#freezer">Manage freezer stock →</a></article><article class="card"><div class="eyebrow">No forgotten half-tins</div><h3 style="margin-top:12px">One shop. Ingredients with a job.</h3><p>The shopping list explains exactly where each pack goes. Tick what you already have, then buy what remains.</p><a class="text-link" href="#shopping">Open your shopping list →</a></article></div><div class="notice">This is a weekday plan for one, with breakfasts and five extra main portions. Weekend meals are not fully planned. £50 is a target, not a priced basket; cupboard stocking and local prices affect the total.</div>`;}
+function recipeCards(){const matches=DATA.recipes.filter(r=>(filter==='All'||filter==='Saved'&&state.favourites.includes(r.id)||r.kind===filter)&&`${r.title} ${r.ingredients.join(' ')}`.toLowerCase().includes(query.toLowerCase()));return matches.length?matches.map(r=>`<article class="card recipe-card"><div class="recipe-art ${r.kind.toLowerCase()}"><span class="eyebrow">${r.kind}</span><span class="recipe-num" aria-hidden="true">${r.kind==='Lunch'?'01':r.kind==='Dinner'?'02':r.kind==='Breakfast'?'03':'04'}</span></div><div class="recipe-content"><h3>${r.title}</h3><div class="subtle">About ${r.time} min · ${r.yieldText}</div><p>${r.intro}</p><div class="recipe-bottom"><button data-recipe="${r.id}">View recipe ↗</button><button class="star" data-favourite="${r.id}" aria-pressed="${state.favourites.includes(r.id)}" aria-label="${state.favourites.includes(r.id)?'Unsave':'Save'} ${r.title}">${state.favourites.includes(r.id)?'★':'☆'}</button></div></div></article>`).join(''):'<div class="empty"><h3>No recipes found</h3><p class="muted">Try another ingredient or choose All.</p></div>';}
+function renderRecipes(){return pageHead('Your recipe book','Full ingredients, clear steps and a plan for every portion.')+`<div class="searchbar noprint"><label class="sr-only" for="recipe-search">Search recipes or ingredients</label><input class="search" id="recipe-search" type="search" placeholder="Search recipes or ingredients…" value="${escape(query)}"><div class="filters" aria-label="Filter recipes">${['All','Lunch','Dinner','Prep','Breakfast','Saved'].map(f=>`<button data-filter="${f}" aria-pressed="${filter===f}">${f==='Saved'?'☆ Saved':f}</button>`).join('')}</div></div><div class="cards" id="recipe-cards">${recipeCards()}</div><p class="small muted" style="margin-top:20px">Timings are approximate. Shared beef and lunch chicken prep are separate recipes. Check product labels for allergens and cooking instructions.</p>`;}
+function shoppingGroups(){return DATA.shopping.map(g=>{const items=g.items.filter(i=>(!remainingOnly||!state.shopping[i.id])&&`${i.name} ${i.use}`.toLowerCase().includes(shopQuery.toLowerCase()));return items.length?`<section class="group"><h3>${g.category}</h3>${items.map(i=>`<label class="checkrow ${state.shopping[i.id]?'checked':''}"><input type="checkbox" data-shopping="${i.id}" ${state.shopping[i.id]?'checked':''}><span class="checktext"><b>${i.name}</b><span class="quantity">${i.quantity}</span><small>${i.use}</small></span></label>`).join('')}</section>`:'';}).join('')||'<div class="empty"><h3>Nothing on this list</h3><p class="muted">Everything may be ticked, or try a different search.</p></div>';}
+function shoppingProgress(){const items=DATA.shopping.flatMap(g=>g.items),done=items.filter(i=>state.shopping[i.id]).length;return `<progress max="${items.length}" value="${done}" aria-label="Shopping items collected"></progress><span class="small" role="status">${done} / ${items.length} ready</span>`;}
+function renderShopping(){return pageHead('Shop once. Use it well.','Tick items you have at home or have put in your basket.','<button data-action="copy-shopping">Copy remaining</button><button data-action="print">Print list</button>')+`<div class="progressrow" id="shopping-progress">${shoppingProgress()}</div><div class="searchbar noprint"><label class="sr-only" for="shop-search">Search shopping list</label><input class="search" id="shop-search" type="search" placeholder="Find an ingredient…" value="${escape(shopQuery)}"><button data-action="remaining" aria-pressed="${remainingOnly}">${remainingOnly?'Show all items':'Show remaining only'}</button></div><div class="shoppinggrid" id="shopping-groups">${shoppingGroups()}</div><div class="notice">Amounts are for the complete plan, including freezer extras and five breakfasts. Vegetable weights are prepared edible amounts: allow for trimming. Buy bulk where the unit price makes sense, and freeze/store the surplus described here.</div><p class="small muted">Printing uses the current filter. “Copy remaining” copies every unticked item, regardless of your search.</p>`;}
+function renderPrep(){const count=DATA.prep.reduce((sum,day,di)=>sum+day[2].filter((_,i)=>state.prep[`${di}-${i}`]).length,0),total=DATA.prep.reduce((sum,d)=>sum+d[2].length,0);return pageHead('A little now. Easier later.','Weekend batch cooking, then small evening jobs. Nothing to prepare before work.','<button data-action="expand-prep">Expand all</button><button data-action="print">Print schedule</button>')+`<div class="progressrow"><progress max="${total}" value="${count}" aria-label="Prep tasks complete"></progress><span class="small" id="prep-total" role="status">${count} / ${total} complete</span></div><div class="prep-layout">${DATA.prep.map(([day,title,tasks],di)=>`<details class="prepday" ${di<3?'open':''}><summary><div><strong>${day}</strong><span class="count" id="prep-count-${di}">${tasks.filter((_,i)=>state.prep[`${di}-${i}`]).length}/${tasks.length}</span><small>${title}</small></div></summary><div class="preptasks">${tasks.map(([name,detail],i)=>`<label class="checkrow ${state.prep[`${di}-${i}`]?'checked':''}"><input type="checkbox" data-prep="${di}-${i}" ${state.prep[`${di}-${i}`]?'checked':''}><span class="checktext"><b>${name}</b><small>${detail}</small></span></label>`).join('')}</div></details>`).join('')}</div><div class="notice">Cool ordinary cooked food and put it in the fridge/freezer within 1–2 hours. Rice: cool and refrigerate within 1 hour; eat within 24 hours. Keep all work lunches cold. <a href="#help">Read storage guidance →</a></div>`;}
+function renderFreezer(){return pageHead('Your future dinners','Track actual portions. Start at zero and add them when you freeze them.','<button data-action="add-batch">Add a completed batch</button>')+`<div class="freezer-grid">${['bolognese','chilli','curry','fishcakes'].map(id=>`<article class="card stock-card"><span class="eyebrow">${id==='fishcakes'?'2 cakes = 1 portion':'Sauce / main only'}</span><h3 style="margin-top:10px">${byId(id).title}</h3><div class="stock-num" id="stock-${id}" aria-live="polite">${state.stock[id]}</div><span class="small muted">portions in your freezer</span><div class="counter"><button data-stock="${id}" data-delta="-1" aria-label="Remove one ${id} portion" ${state.stock[id]===0?'disabled':''}>−</button><span>Add / use a portion</span><button data-stock="${id}" data-delta="1" aria-label="Add one ${id} portion" ${state.stock[id]>=999?'disabled':''}>+</button></div><button style="margin-top:16px;width:100%" data-recipe="${id}">Storage & recipe</button></article>`).join('')}</div><div class="notice"><strong>A completed batch adds 9 portions:</strong> 2 bolognese, 2 chilli, 3 curry and 2 fishcake dinners. Remove each portion as you take it out to thaw. After the four planned frozen dinners, you’ll have 5 extras. Use the individual + buttons if you cook in stages; don’t also add the whole batch.</div><div class="bottomgrid"><article class="card"><h3>Label the actual containers</h3><p>Write the meal name, cooking/freezing date and number of portions. This counter records quantities only; it does not monitor dates or food safety. Use older batches first and follow product guidance.</p></article><article class="card"><h3>Thaw tonight, eat tomorrow</h3><p>Defrost in the fridge. Cook or eat within 24 hours of being fully defrosted. Reheat cooked dinners once, until steaming hot throughout. Pasta, rice and sides are made fresh when needed.</p><a href="#help" class="text-link">Full storage notes →</a></article></div>`;}
+function renderHelp(){return pageHead('Make the plan work for you','A few useful details, all in one place.')+`<div class="helpgrid"><article class="card"><h3>Start here</h3><ol><li>Open Shopping and tick what you already own.</li><li>Follow the weekend jobs in Prep plan.</li><li>Tap any meal to see ingredients and tick off the method. Use Cooking mode for one large step at a time.</li><li>Pack lunches in the evening; keep them chilled until lunchtime.</li><li>Record cooked portions in Freezer, then subtract each one when you take it out.</li></ol></article><article class="card"><h3>Your progress stays on this device</h3><p>Shopping ticks, prep tasks, recipe steps, saved recipes and freezer counts are stored in this browser. They do not sync between devices or browsers. Clearing site data removes them. Private browsing may discard them.</p><p>“Reset checklists” clears shopping, prep and recipe steps for a fresh week. It keeps favourites and freezer stock. You can reopen a recipe to resume your steps.</p><p id="help-storage">${storageOK?'Browser storage is available.':'Storage is unavailable here: progress will only last while this page remains open.'}</p></article><article class="card"><h3>Keep cold lunches cold</h3><p>Cool cooked food promptly and refrigerate or freeze within 1–2 hours. Eat refrigerated leftovers within 48 hours. Sunday’s two chicken lunches are for Monday and Tuesday only.</p><p>Rice needs extra care: cool and refrigerate within 1 hour and eat within 24 hours. Prepare Thursday’s rice lunch on Wednesday evening.</p><p>Use a work fridge, or an insulated bag with ice packs. Keep the fridge at 5°C or below. Follow use-by dates and product storage instructions.</p></article><article class="card"><h3>Freezing & reheating</h3><p>Use small, shallow containers for quick cooling. Label before freezing. Defrost in the fridge; cook or eat within 24 hours of being fully thawed.</p><p>Reheat cooked meals only once, until steaming hot throughout. Fishcakes: after defrosting, about 20–25 minutes at 180°C fan / 200°C conventional; check the centre is hot.</p><p>Store raw chicken covered below ready-to-eat foods. The noodle chicken is frozen raw, then cooked on Thursday.</p></article><article class="card"><h3>Budget & less waste</h3><p>This is a weekday plan for one, with breakfast and fruit. Five extra main portions are included; weekend meals are not fully covered. £50 is a shopping target, not a verified total.</p><p>Compare unit prices. Bigger packs only help if you will use the surplus. Freeze bread, spare sausages and suitable leftover pesto or curry paste. Keep dry pasta, rice and lentils for another week.</p><p>The whole tin of beansprouts goes in Friday’s noodles. The shopping list accounts for each main ingredient, including the 150g yoghurt and spare egg for the weekend.</p></article><article class="card"><h3>Food & useful references</h3><p>The plan adds vegetables, fruit, pulses and nuts around familiar meals. It is not a calorie-controlled or nutritionally complete prescription. Check labels for allergens, including egg, milk, wheat, nuts, fish, soy, sesame and ingredients in sauces.</p><p><a href="https://www.food.gov.uk/safety-hygiene/chilling" target="_blank" rel="noopener">Food Standards Agency: chilling food ↗</a><br><a href="https://www.food.gov.uk/safety-hygiene/home-food-fact-checker" target="_blank" rel="noopener">Food Standards Agency: rice and leftovers ↗</a><br><a href="https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/the-eatwell-guide/" target="_blank" rel="noopener">NHS Eatwell Guide ↗</a></p><p>Use product instructions where they are more restrictive. Timings depend on your equipment and ingredient sizes.</p></article></div>`;}
+function render(){const renderers={week:renderWeek,recipes:renderRecipes,shopping:renderShopping,prep:renderPrep,freezer:renderFreezer,help:renderHelp};$('#content').innerHTML=renderers[view]();document.querySelectorAll('.nav a').forEach(a=>a.dataset.view===view?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));document.title=`${{week:'This week',recipes:'Recipes',shopping:'Shopping',prep:'Prep plan',freezer:'Freezer',help:'Help'}[view]} · The Good Week`;}
+function navigate(){const next=location.hash.slice(1);view=['week','recipes','shopping','prep','freezer','help'].includes(next)?next:'week';render();}
+window.addEventListener('hashchange',()=>{navigate();$('#main').focus({preventScroll:true});$('#main').scrollIntoView({block:'start',behavior:'instant'});});
+function openRecipe(id){const r=byId(id);if(!r)return;returnFocus=document.activeElement;currentRecipe=r;cookStep=null;renderDialog();$('#recipe-dialog').showModal();$('#recipe-dialog').scrollTop=0;}
+function renderDialog(){const r=currentRecipe;$('#dialog-content').innerHTML=`<span class="eyebrow">${r.kind}</span><h2 class="dialog-title" id="dialog-title">${r.title}</h2><p class="muted">${r.intro}</p><div class="recipe-meta"><span class="pill">About ${r.time} minutes</span><span class="pill">${r.yieldText}</span></div><div class="tools noprint"><button class="primary" data-action="cook">${cookStep===null?'Start cooking mode':'Back to full recipe'}</button><button class="star" data-favourite="${r.id}" aria-pressed="${state.favourites.includes(r.id)}" aria-label="${state.favourites.includes(r.id)?'Unsave':'Save'} recipe">${state.favourites.includes(r.id)?'★':'☆'}</button><button data-action="reset-steps">Reset steps</button></div>${r.note?`<div class="notice">${r.note}${['chilli','bolognese'].includes(r.id)?'<br><button data-recipe="base" style="margin-top:10px">Open shared beef base ↗</button>':['caesar','pesto'].includes(r.id)?'<br><button data-recipe="chicken" style="margin-top:10px">Open lunch chicken prep ↗</button>':''}</div>`:''}<div class="recipe-columns" ${cookStep!==null?'hidden':''}><section><h3>Ingredients</h3><ul class="ingredient-list">${r.ingredients.map(i=>`<li>${i}</li>`).join('')}</ul></section><section><h3>Method <span class="count">Tick as you cook</span></h3><div class="steps">${r.steps.map((s,i)=>`<label class="checkrow ${state.steps[`${r.id}-${i}`]?'checked':''}"><input type="checkbox" data-step="${r.id}-${i}" ${state.steps[`${r.id}-${i}`]?'checked':''}><span class="checktext"><span class="step-number">Step ${i+1}</span><br>${s}</span></label>`).join('')}</div></section></div>${cookStep!==null?`<section class="cookview" tabindex="-1" aria-live="polite"><span class="eyebrow">Step ${cookStep+1} of ${r.steps.length}</span><p>${r.steps[cookStep]}</p><div class="cooknav"><button data-action="prev-step" ${cookStep===0?'disabled':''}>← Previous</button><button class="primary" data-action="next-step">${cookStep===r.steps.length-1?'Finish recipe ✓':'Done & next →'}</button></div><details style="margin-top:22px"><summary>Check ingredients</summary><ul>${r.ingredients.map(i=>`<li>${i}</li>`).join('')}</ul></details></section>`:''}<section class="storage"><h3>Store, freeze & serve</h3><p>${r.storage}</p></section>`;}
+function closeRecipe(){ $('#recipe-dialog').close(); }
+$('#recipe-dialog').addEventListener('close',()=>{currentRecipe=null;cookStep=null;document.body.classList.remove('print-recipe');if(returnFocus?.isConnected)returnFocus.focus();});
+$('#recipe-dialog').addEventListener('click',e=>{if(e.target===$('#recipe-dialog')){const b=e.target.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)closeRecipe();}});
+let printDetails=[];
+window.addEventListener('beforeprint',()=>{if($('#recipe-dialog').open)document.body.classList.add('print-recipe');if(view==='prep'){printDetails=[...document.querySelectorAll('.prepday')].map(el=>[el,el.open]);printDetails.forEach(([el])=>el.open=true);}});
+window.addEventListener('afterprint',()=>{document.body.classList.remove('print-recipe');printDetails.forEach(([el,open])=>el.open=open);printDetails=[];});
+async function copyShopping(){const text='THE GOOD WEEK — STILL TO BUY\n\n'+DATA.shopping.map(g=>{const items=g.items.filter(i=>!state.shopping[i.id]);return items.length?g.category.toUpperCase()+'\n'+items.map(i=>`☐ ${i.name}: ${i.quantity}`).join('\n'):'';}).filter(Boolean).join('\n\n');try{await navigator.clipboard.writeText(text);toast('Remaining shopping list copied.');}catch(e){const blob=new Blob([text],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='good-week-shopping.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Shopping list downloaded as a text file.');}}
+document.addEventListener('input',e=>{if(e.target.id==='recipe-search'){query=e.target.value;$('#recipe-cards').innerHTML=recipeCards();}if(e.target.id==='shop-search'){shopQuery=e.target.value;$('#shopping-groups').innerHTML=shoppingGroups();}});
+document.addEventListener('change',e=>{const el=e.target;if(el.dataset.shopping){state.shopping[el.dataset.shopping]=el.checked;el.closest('label').classList.toggle('checked',el.checked);$('#shopping-progress').innerHTML=shoppingProgress();if(remainingOnly)$('#shopping-groups').innerHTML=shoppingGroups();save();}if(el.dataset.prep){state.prep[el.dataset.prep]=el.checked;el.closest('label').classList.toggle('checked',el.checked);const di=Number(el.dataset.prep.split('-')[0]);$(`#prep-count-${di}`).textContent=DATA.prep[di][2].filter((_,i)=>state.prep[`${di}-${i}`]).length+'/'+DATA.prep[di][2].length;const total=DATA.prep.reduce((sum,d)=>sum+d[2].length,0),done=DATA.prep.reduce((sum,d,di)=>sum+d[2].filter((_,i)=>state.prep[`${di}-${i}`]).length,0);$('#content progress').value=done;$('#prep-total').textContent=`${done} / ${total} complete`;save();}if(el.dataset.step){state.steps[el.dataset.step]=el.checked;el.closest('label').classList.toggle('checked',el.checked);save();}});
+document.addEventListener('click',e=>{const el=e.target.closest('button');if(!el)return;if(el.dataset.recipe){if($('#recipe-dialog').open){currentRecipe=byId(el.dataset.recipe);cookStep=null;renderDialog();$('#recipe-dialog').scrollTop=0;}else openRecipe(el.dataset.recipe);return;}if(el.dataset.filter){filter=el.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.filter===filter));$('#recipe-cards').innerHTML=recipeCards();return;}if(el.dataset.favourite){const id=el.dataset.favourite,pos=state.favourites.indexOf(id);if(pos<0)state.favourites.push(id);else state.favourites.splice(pos,1);save();const saved=state.favourites.includes(id);document.querySelectorAll(`[data-favourite="${id}"]`).forEach(b=>{b.textContent=saved?'★':'☆';b.setAttribute('aria-pressed',saved);b.setAttribute('aria-label',`${saved?'Unsave':'Save'} ${byId(id).title}`);});if(view==='recipes'&&filter==='Saved')$('#recipe-cards').innerHTML=recipeCards();toast(saved?'Recipe saved.':'Recipe removed from saved.');return;}if(el.dataset.stock){const id=el.dataset.stock;state.stock[id]=Math.min(999,Math.max(0,state.stock[id]+Number(el.dataset.delta)));save();$(`#stock-${id}`).textContent=state.stock[id];document.querySelectorAll(`[data-stock="${id}"]`).forEach(b=>b.disabled=b.dataset.delta==='-1'?state.stock[id]===0:state.stock[id]>=999);return;}
+switch(el.dataset.action){case 'help':location.hash='help';break;case 'print':window.print();break;case 'print-recipe':document.body.classList.add('print-recipe');window.print();break;case 'close':closeRecipe();break;case 'remaining':remainingOnly=!remainingOnly;el.textContent=remainingOnly?'Show all items':'Show remaining only';el.setAttribute('aria-pressed',remainingOnly);$('#shopping-groups').innerHTML=shoppingGroups();break;case 'copy-shopping':copyShopping();break;case 'expand-prep':{const all=[...document.querySelectorAll('.prepday')],open=!all.every(d=>d.open);all.forEach(d=>d.open=open);el.textContent=open?'Collapse all':'Expand all';break;}case 'reset':if(confirm('Start a fresh week? This clears shopping, prep and recipe step ticks. Your saved recipes and freezer counts will stay.')){state.shopping={};state.prep={};state.steps={};save();render();toast('Checklists reset. Freezer stock and saved recipes kept.');}break;case 'add-batch':if(confirm('Have you cooked, cooled and frozen the complete batch? This adds 2 bolognese, 2 chilli, 3 curry and 2 fishcake dinner portions. Do not add these again if you have already logged them individually.')){for(const [id,n] of Object.entries({bolognese:2,chilli:2,curry:3,fishcakes:2}))state.stock[id]=Math.min(999,state.stock[id]+n);save();render();toast('Nine main portions added to your freezer.');}break;case 'cook':cookStep=cookStep===null?Math.max(0,currentRecipe.steps.findIndex((_,i)=>!state.steps[`${currentRecipe.id}-${i}`])):null;renderDialog();break;case 'prev-step':cookStep=Math.max(0,cookStep-1);renderDialog();$('.cookview')?.focus();break;case 'next-step':state.steps[`${currentRecipe.id}-${cookStep}`]=true;save();if(cookStep===currentRecipe.steps.length-1){cookStep=null;toast('Method complete. Check the storage instructions below.');}else cookStep++;renderDialog();if(cookStep!==null)$('.cookview')?.focus();else $('[data-action=\"cook\"]')?.focus();break;case 'reset-steps':currentRecipe.steps.forEach((_,i)=>delete state.steps[`${currentRecipe.id}-${i}`]);save();cookStep=null;renderDialog();toast('Recipe steps reset.');break;}
+});
+navigate();
+</script>
+</body>
+</html>

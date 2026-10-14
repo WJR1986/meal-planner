@@ -1,0 +1,778 @@
+{
+  "recipes": [
+    {
+      "id": "base",
+      "title": "Shared beef & vegetable base",
+      "kind": "Prep",
+      "time": 25,
+      "yieldText": "Makes the base for 4 dinners",
+      "intro": "Cook once, then split between bolognese and chilli.",
+      "ingredients": [
+        "500g lean beef mince",
+        "200g chopped onion",
+        "200g grated carrot",
+        "2 garlic cloves, crushed",
+        "2 tsp olive or rapeseed oil"
+      ],
+      "steps": [
+        "Heat the oil in a large pan. Soften the onion and carrot for 7–8 minutes.",
+        "Add the mince and brown thoroughly, breaking up any lumps. Add garlic and cook for 1 minute.",
+        "Divide the cooked mixture equally. Use half in the bolognese and half in the chilli; finish both sauces now."
+      ],
+      "storage": "Store the finished sauces using their recipe instructions.",
+      "note": "The mince, onion and carrot here are already included in the shopping list. Do not buy them again for the two sauces."
+    },
+    {
+      "id": "bolognese",
+      "title": "Beef & lentil bolognese",
+      "kind": "Dinner",
+      "time": 35,
+      "yieldText": "2 sauce portions · eat 1, freeze 1",
+      "intro": "A familiar sauce with extra vegetables and red lentils.",
+      "ingredients": [
+        "½ of the cooked shared beef base",
+        "1 × 400g tin chopped tomatoes",
+        "50g dry red lentils, rinsed",
+        "200ml water, plus more if needed",
+        "1 tsp Italian herbs; black pepper",
+        "For this week’s plate: 75g dry pasta + 150g broccoli"
+      ],
+      "steps": [
+        "Make the shared beef base first and put half in a saucepan.",
+        "Add tomatoes, lentils, water, herbs and pepper. Bring to a gentle simmer.",
+        "Simmer for 25–30 minutes, stirring occasionally, until the lentils are tender. Add a splash of water if the sauce gets too thick.",
+        "Split into 2 portions. On Monday, cook 75g pasta according to the packet and cook 150g broccoli; serve with 1 hot sauce portion."
+      ],
+      "storage": "Saturday: cool both sauce portions promptly and freeze separately. Move Monday’s portion to the fridge on Sunday evening. Reheat once until steaming hot throughout. Keep the second portion for another week.",
+      "note": "Open “Shared beef & vegetable base” for the first step. Pasta and broccoli are only allocated for this week’s serving."
+    },
+    {
+      "id": "chilli",
+      "title": "Smoky beef & bean chilli",
+      "kind": "Dinner",
+      "time": 35,
+      "yieldText": "2 sauce portions · eat 1, freeze 1",
+      "intro": "A whole tin of kidney beans goes into this generous batch.",
+      "ingredients": [
+        "½ of the cooked shared beef base",
+        "1 pepper, diced",
+        "1 × 400g tin kidney beans, drained and rinsed",
+        "1 × 400g tin chopped tomatoes",
+        "100ml water",
+        "1 tsp ground cumin + 1 tsp smoked paprika",
+        "¼–½ tsp chilli powder, to taste",
+        "For this week’s plate: 70g dry rice + 200g broccoli"
+      ],
+      "steps": [
+        "Put half the cooked shared beef base in a pan.",
+        "Add the pepper, beans, tomatoes, water and spices.",
+        "Simmer for 25–30 minutes, stirring occasionally, until the pepper is tender. Split into 2 portions.",
+        "On Thursday, cook 70g dry rice according to the packet or rice cooker instructions and cook 200g broccoli. Serve with 1 hot chilli portion."
+      ],
+      "storage": "Saturday: cool and freeze both sauce portions separately. Move Thursday’s portion to the fridge on Wednesday evening. Reheat once until steaming hot. Keep the other portion frozen for another week.",
+      "note": "The shared beef base is a separate recipe. Cook dinner rice fresh; it is not the cold rice lunch."
+    },
+    {
+      "id": "curry",
+      "title": "Tomato chicken & chickpea curry",
+      "kind": "Dinner",
+      "time": 40,
+      "yieldText": "3 curry portions · eat 1, freeze 2",
+      "intro": "A colourful curry using a full tin of chickpeas.",
+      "ingredients": [
+        "500g raw chicken breast, diced",
+        "150g chopped onion",
+        "150g carrot, finely diced",
+        "1 pepper, chopped",
+        "2 garlic cloves, crushed",
+        "2 tbsp curry paste of your choice",
+        "1 × 400g tin chickpeas, drained and rinsed",
+        "1 × 400g tin chopped tomatoes",
+        "100ml water + 1 tsp oil",
+        "For this week’s plate: 70g dry rice + 150g broccoli"
+      ],
+      "steps": [
+        "Heat the oil. Soften the onion and carrot for 7–8 minutes.",
+        "Add chicken, pepper, garlic and curry paste. Stir for 3 minutes.",
+        "Add chickpeas, tomatoes and water. Simmer for 20–25 minutes until the chicken is fully cooked and the vegetables are tender. Add water if needed.",
+        "Divide into 3 portions. On Tuesday, cook the rice according to its packet and cook the broccoli to serve with 1 portion."
+      ],
+      "storage": "Sunday: cool and freeze all 3 curry portions. Move Tuesday’s portion to the fridge on Monday evening. Reheat once until steaming hot throughout. Leave the other 2 portions frozen.",
+      "note": "Choose the heat level you enjoy. Check paste labels for allergens and storage instructions."
+    },
+    {
+      "id": "traybake",
+      "title": "Smoky sausage & vegetable traybake",
+      "kind": "Dinner",
+      "time": 50,
+      "yieldText": "1 dinner",
+      "intro": "One tray, familiar flavours and plenty of vegetables.",
+      "ingredients": [
+        "2 sausages",
+        "300g potatoes, cut into 2cm pieces",
+        "150g carrot, cut into small chunks",
+        "100g onion, cut into wedges",
+        "1 pepper, chopped",
+        "1 tsp oil + 1 tsp smoked paprika",
+        "Black pepper"
+      ],
+      "steps": [
+        "Heat the oven to 200°C fan / 220°C conventional.",
+        "Toss the potatoes and carrot with oil, paprika and pepper in a roasting tin. Roast for 15 minutes.",
+        "Add the sausages, onion and pepper. Roast for another 25–30 minutes, turning halfway, until the sausages are cooked through and vegetables are tender. Follow the sausage packet if it needs longer."
+      ],
+      "storage": "Cook fresh on Wednesday. Freeze the unused raw sausages on shopping day, following the packet, and label them.",
+      "note": "A little midweek cooking gives you a change from reheated batch meals."
+    },
+    {
+      "id": "fishcakes",
+      "title": "Lemon white fishcakes",
+      "kind": "Dinner",
+      "time": 60,
+      "yieldText": "4 large cakes · 2 dinners",
+      "intro": "Crisp breadcrumbs, soft potato and boneless white fish.",
+      "ingredients": [
+        "400g boneless, skinless white fish",
+        "500g potatoes, peeled weight",
+        "Zest of 1 lemon + 1 tbsp lemon juice",
+        "Black pepper",
+        "1 egg, beaten",
+        "60g fresh breadcrumbs",
+        "2 tsp oil",
+        "For Friday’s plate: 160g peas + 150g carrot"
+      ],
+      "steps": [
+        "Boil the potatoes for 15–20 minutes until tender. Drain well and mash without milk. Let the mash cool.",
+        "Cook the fish according to its packet. Drain, check for any remaining bones and flake.",
+        "Combine fish, mash, lemon zest, juice and pepper. Shape into 4 large cakes and chill for 20 minutes.",
+        "Heat the oven to 200°C fan / 220°C conventional. Dip each cake in beaten egg, then breadcrumbs. Place on a lined tray and lightly brush with oil.",
+        "Bake for 20–25 minutes, turning carefully, until golden and hot throughout. Cool promptly if freezing.",
+        "On Friday, reheat 2 defrosted cakes at 180°C fan / 200°C conventional for about 20–25 minutes, until steaming hot throughout. Cook 160g peas and 150g carrots to serve."
+      ],
+      "storage": "Saturday: cool and freeze all 4 cooked cakes, separated with baking paper in 2 packs of 2. Move Friday’s pack into the fridge Thursday evening. Reheat only once. Keep the other pair for another week.",
+      "note": "The potato amounts are edible weights: buy a little extra if peeling produces substantial waste."
+    },
+    {
+      "id": "chicken",
+      "title": "Lunch chicken prep",
+      "kind": "Prep",
+      "time": 30,
+      "yieldText": "3 lunch portions · cook 2, freeze 1 raw",
+      "intro": "Keeps raw and cooked chicken quantities clear.",
+      "ingredients": [
+        "500g raw chicken breast, divided into 3 roughly equal portions",
+        "1 tsp oil",
+        "½ tsp smoked paprika + black pepper"
+      ],
+      "steps": [
+        "On Sunday, put 1 raw portion (about 165g) into a labelled freezer bag, in thin strips, and freeze straight away for Friday’s noodles.",
+        "Heat the oven to 190°C fan / 210°C conventional. Coat the other 2 portions (about 335g raw in total) with oil, paprika and pepper.",
+        "Roast for about 20–25 minutes, until fully cooked throughout; thicker breasts may need longer.",
+        "Cool promptly and divide the cooked chicken equally between Monday’s Caesar pasta and Tuesday’s pesto pasta. Refrigerate the finished lunches."
+      ],
+      "storage": "Prepare the two cooked portions on Sunday evening and eat within 48 hours. Defrost the raw Friday portion in the fridge from Wednesday evening; cook within 24 hours of being fully defrosted on Thursday.",
+      "note": "Use separate utensils for raw chicken, and do not wash it. Fully cooked chicken should have no pink meat and juices should run clear; a food thermometer can confirm doneness."
+    },
+    {
+      "id": "caesar",
+      "title": "Chicken Caesar pasta salad",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 filling cold lunch",
+      "intro": "The Caesar you enjoy, made more filling with chicken, pasta and peas.",
+      "ingredients": [
+        "75g dry pasta",
+        "1 cooked portion from Lunch chicken prep",
+        "80g frozen peas",
+        "100g cherry tomatoes, halved",
+        "½ small romaine lettuce, washed and dried",
+        "1 tbsp Caesar dressing + 30g plain yoghurt",
+        "10g Parmesan, grated",
+        "20g bread, cubed"
+      ],
+      "steps": [
+        "Cook the pasta according to its packet. Cook the peas, drain both and cool promptly.",
+        "Toast the bread cubes in a dry frying pan until crisp, then cool.",
+        "Combine pasta, peas, chicken and tomatoes in a lunch box. Mix Caesar dressing with yoghurt in a small separate pot.",
+        "Pack dry lettuce, Parmesan and croutons separately or in separate compartments to preserve their texture. Refrigerate. Combine at lunchtime."
+      ],
+      "storage": "Make Sunday evening and eat Monday. Keep the lunch chilled at work or use an insulated bag with ice packs.",
+      "note": "No preparation before work. The dressing and croutons are packed the night before."
+    },
+    {
+      "id": "pesto",
+      "title": "Creamy pesto chicken pasta",
+      "kind": "Lunch",
+      "time": 20,
+      "yieldText": "1 cold lunch + carrot sticks",
+      "intro": "Creamy pesto, chicken and tomatoes, with a crunchy side.",
+      "ingredients": [
+        "75g dry pasta",
+        "1 cooked portion from Lunch chicken prep",
+        "80g frozen peas",
+        "100g cherry tomatoes, halved",
+        "20g pesto",
+        "40g plain yoghurt",
+        "A squeeze of lemon or a little water",
+        "100g carrot, cut into sticks"
+      ],
+      "steps": [
+        "Cook the pasta and peas, drain and cool promptly.",
+        "Stir together pesto and yoghurt, loosening with a little water or lemon juice.",
+        "Combine the sauce with pasta, peas, chicken and tomatoes. Pack carrot sticks alongside and refrigerate."
+      ],
+      "storage": "Make Sunday evening and eat Tuesday lunchtime, within 48 hours of preparation. Keep chilled during travel and at work.",
+      "note": "Freeze leftover pesto in small portions if the jar’s opened storage life would otherwise be exceeded."
+    },
+    {
+      "id": "potato",
+      "title": "Egg & potato Caesar salad",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 filling cold lunch",
+      "intro": "A second take on Caesar with eggs, potatoes and peas.",
+      "ingredients": [
+        "200g potatoes, cut into bite-sized pieces",
+        "2 eggs",
+        "80g frozen peas",
+        "50g cherry tomatoes, halved",
+        "½ small romaine lettuce, washed and dried",
+        "1 tbsp Caesar dressing + 30g plain yoghurt",
+        "10g Parmesan, grated",
+        "20g bread, cubed",
+        "100g carrot sticks"
+      ],
+      "steps": [
+        "Boil potatoes for about 12–15 minutes until tender; drain and cool. In another pan, boil the eggs for 10–12 minutes until hard-boiled, cool in cold water and peel.",
+        "Cook the peas and cool promptly. Toast the bread cubes in a dry pan and cool.",
+        "Mix the Caesar dressing and yoghurt in a separate pot. Pack potato, peas, quartered eggs and tomatoes together, with dry lettuce and Parmesan alongside.",
+        "Pack the dressing, croutons and carrot sticks. Refrigerate everything except the dry croutons. Combine at lunch."
+      ],
+      "storage": "Prepare Tuesday evening and eat Wednesday. Keep chilled; do not freeze the assembled salad.",
+      "note": ""
+    },
+    {
+      "id": "rice",
+      "title": "Cold egg-fried rice",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 cold lunch",
+      "intro": "A simple rice box with eggs, peas and carrot.",
+      "ingredients": [
+        "70g dry rice",
+        "2 eggs, beaten",
+        "100g frozen peas",
+        "100g carrot, finely diced",
+        "1 tsp light soy sauce",
+        "½ tsp sesame oil"
+      ],
+      "steps": [
+        "Cook the rice according to the packet or rice cooker instructions.",
+        "In a frying pan, soften carrot and peas with a splash of water. Let excess water evaporate.",
+        "Add sesame oil and eggs; stir until the egg is fully set. Stir in the cooked rice and soy sauce.",
+        "Immediately spread into a clean, shallow container to cool quickly. Refrigerate within 1 hour of cooking. Do not leave it in the rice cooker to cool."
+      ],
+      "storage": "Make Wednesday evening and eat cold on Thursday, within 24 hours of cooking. Keep refrigerated, including at work; use ice packs for the journey. This lunch is not intended for batch fridge storage.",
+      "note": "Rice has a shorter storage window than the other lunches. Only cook this lunch the evening before."
+    },
+    {
+      "id": "noodles",
+      "title": "Chicken chow mein noodle salad",
+      "kind": "Lunch",
+      "time": 25,
+      "yieldText": "1 generous cold lunch",
+      "intro": "The whole tin of beansprouts goes in: no half-tin left behind.",
+      "ingredients": [
+        "75g dry egg noodles",
+        "1 raw chicken portion (about 165g), defrosted",
+        "1 standard tin beansprouts, drained (use the whole tin)",
+        "50g onion, thinly sliced",
+        "50g carrot, cut into thin strips",
+        "1 tsp light soy sauce",
+        "½ tsp dark soy sauce, optional",
+        "½ tsp sesame oil + 1 tsp cooking oil",
+        "A squeeze of lemon"
+      ],
+      "steps": [
+        "Cook the egg noodles according to their packet and drain.",
+        "Heat the cooking oil in a frying pan or wok. Stir-fry the chicken strips until fully cooked throughout.",
+        "Add the onion, carrot and the whole drained tin of beansprouts. Stir-fry for 3–4 minutes, following any extra cooking instruction on the tin.",
+        "Toss with noodles, soy sauces, sesame oil and lemon. Transfer to a shallow container, cool promptly and refrigerate."
+      ],
+      "storage": "Move the frozen raw chicken to the fridge Wednesday evening. Cook this lunch Thursday evening, within 24 hours of the chicken being fully defrosted. Eat Friday, kept chilled.",
+      "note": "If your tin is especially large, this is a very generous lunch. The plan deliberately uses all of it."
+    },
+    {
+      "id": "oats",
+      "title": "Berry & walnut overnight oats",
+      "kind": "Breakfast",
+      "time": 5,
+      "yieldText": "1 breakfast · repeat on weekdays",
+      "intro": "Prep in the evening; grab from the fridge in the morning.",
+      "ingredients": [
+        "40g oats",
+        "150g plain yoghurt",
+        "80g berries, fresh or frozen",
+        "15g unsalted walnuts",
+        "A splash of water"
+      ],
+      "steps": [
+        "Check frozen berry packaging: if it says to cook before eating, cook the berries as directed and cool promptly first.",
+        "Mix oats, yoghurt, berries and a splash of water in a covered container. Refrigerate overnight.",
+        "Pack walnuts in a small pot or sprinkle on top in the evening. Eat the next morning."
+      ],
+      "storage": "Prepare the evening before, rather than making all five at once. Follow yoghurt and berry storage labels.",
+      "note": "Buy 200g oats, 750g yoghurt, 400g berries and 75g walnuts for five breakfasts. Add one apple or banana each day."
+    }
+  ],
+  "shopping": [
+    {
+      "category": "Meat, fish & eggs",
+      "items": [
+        {
+          "id": "g0-0",
+          "name": "Chicken breast",
+          "quantity": "1kg raw",
+          "use": "500g curry; 500g split across the 3 chicken lunches."
+        },
+        {
+          "id": "g0-1",
+          "name": "Lean beef mince",
+          "quantity": "500g",
+          "use": "All in the shared base: half for each sauce."
+        },
+        {
+          "id": "g0-2",
+          "name": "Sausages",
+          "quantity": "1 pack (need 2)",
+          "use": "Freeze the remaining raw sausages individually on shopping day."
+        },
+        {
+          "id": "g0-3",
+          "name": "Boneless, skinless white fish",
+          "quantity": "400g",
+          "use": "All in 4 fishcakes. Extra frozen fillets stay frozen."
+        },
+        {
+          "id": "g0-4",
+          "name": "Eggs",
+          "quantity": "6",
+          "use": "2 potato salad, 2 rice, 1 fishcakes; 1 for the weekend."
+        }
+      ]
+    },
+    {
+      "category": "Vegetables & fruit",
+      "items": [
+        {
+          "id": "g1-0",
+          "name": "Potatoes",
+          "quantity": "1kg edible weight",
+          "use": "500g fishcakes, 300g traybake, 200g salad. Allow a little extra for peeling."
+        },
+        {
+          "id": "g1-1",
+          "name": "Carrots",
+          "quantity": "1kg edible weight",
+          "use": "200g beef base; 150g curry; 150g traybake; 150g Friday side; 100g Tue sticks; 100g Wed sticks; 100g rice; 50g noodles."
+        },
+        {
+          "id": "g1-2",
+          "name": "Onions",
+          "quantity": "About 4 (500g prepared)",
+          "use": "200g base; 150g curry; 100g traybake; 50g noodles. Chop and freeze any surplus."
+        },
+        {
+          "id": "g1-3",
+          "name": "Peppers",
+          "quantity": "3",
+          "use": "1 each in chilli, curry and traybake."
+        },
+        {
+          "id": "g1-4",
+          "name": "Cherry tomatoes",
+          "quantity": "250g",
+          "use": "100g Monday, 100g Tuesday, 50g Wednesday."
+        },
+        {
+          "id": "g1-5",
+          "name": "Small romaine lettuce",
+          "quantity": "1",
+          "use": "Half Monday, half Wednesday; keep the remaining leaves dry and refrigerated."
+        },
+        {
+          "id": "g1-6",
+          "name": "Lemon",
+          "quantity": "1",
+          "use": "Zest + 1 tbsp juice in fishcakes; remaining juice for lunches. Use water to loosen pesto if needed."
+        },
+        {
+          "id": "g1-7",
+          "name": "Garlic",
+          "quantity": "1 bulb (need 4 cloves)",
+          "use": "2 cloves in the base; 2 in curry. Keep remaining cloves for next week."
+        },
+        {
+          "id": "g1-8",
+          "name": "Apples or bananas",
+          "quantity": "5",
+          "use": "One each weekday."
+        }
+      ]
+    },
+    {
+      "category": "Frozen",
+      "items": [
+        {
+          "id": "g2-0",
+          "name": "Peas",
+          "quantity": "500g",
+          "use": "80g each Mon/Tue/Wed lunch; 100g Thu lunch; 160g Friday dinner."
+        },
+        {
+          "id": "g2-1",
+          "name": "Broccoli",
+          "quantity": "500g",
+          "use": "150g Mon dinner; 150g Tue dinner; 200g Thu dinner."
+        },
+        {
+          "id": "g2-2",
+          "name": "Berries",
+          "quantity": "400g",
+          "use": "80g per weekday breakfast. Follow any cooking instruction on the pack."
+        }
+      ]
+    },
+    {
+      "category": "Tins & jars",
+      "items": [
+        {
+          "id": "g3-0",
+          "name": "Chopped tomatoes",
+          "quantity": "3 × 400g tins",
+          "use": "1 each for bolognese, chilli and curry."
+        },
+        {
+          "id": "g3-1",
+          "name": "Kidney beans",
+          "quantity": "1 × 400g tin",
+          "use": "Drain and rinse; whole tin in chilli."
+        },
+        {
+          "id": "g3-2",
+          "name": "Chickpeas",
+          "quantity": "1 × 400g tin",
+          "use": "Drain and rinse; whole tin in curry."
+        },
+        {
+          "id": "g3-3",
+          "name": "Beansprouts",
+          "quantity": "1 standard tin",
+          "use": "Drain; whole tin in Friday’s noodles."
+        },
+        {
+          "id": "g3-4",
+          "name": "Pesto",
+          "quantity": "Need 20g",
+          "use": "Buy a small jar if needed; freeze surplus in portions according to its label."
+        },
+        {
+          "id": "g3-5",
+          "name": "Curry paste",
+          "quantity": "Need 2 tbsp",
+          "use": "Choose your preferred heat; refrigerate/freeze surplus as labelled."
+        },
+        {
+          "id": "g3-6",
+          "name": "Caesar dressing",
+          "quantity": "Need 2 tbsp",
+          "use": "1 tbsp for each Caesar lunch. Check what you already have."
+        }
+      ]
+    },
+    {
+      "category": "Dairy & bread",
+      "items": [
+        {
+          "id": "g4-0",
+          "name": "Plain yoghurt",
+          "quantity": "1kg",
+          "use": "750g breakfasts + 100g dressings; 150g for weekend use. Two 500g tubs can help with opened shelf life."
+        },
+        {
+          "id": "g4-1",
+          "name": "Parmesan",
+          "quantity": "Need 20g",
+          "use": "10g for each Caesar lunch. Grate and freeze surplus."
+        },
+        {
+          "id": "g4-2",
+          "name": "Sliced bread",
+          "quantity": "Small loaf (need 100g)",
+          "use": "60g crumbs + 40g croutons. Freeze remaining slices."
+        }
+      ]
+    },
+    {
+      "category": "Dry goods & cupboard",
+      "items": [
+        {
+          "id": "g5-0",
+          "name": "Pasta",
+          "quantity": "500g pack (use 225g)",
+          "use": "75g each Monday dinner, Monday lunch and Tuesday lunch."
+        },
+        {
+          "id": "g5-1",
+          "name": "Rice",
+          "quantity": "500g pack (use 210g)",
+          "use": "70g each Tuesday dinner, Thursday lunch and Thursday dinner."
+        },
+        {
+          "id": "g5-2",
+          "name": "Egg noodles",
+          "quantity": "1 pack (use 75g)",
+          "use": "Keep unused dry noodles for another week."
+        },
+        {
+          "id": "g5-3",
+          "name": "Red lentils",
+          "quantity": "1 bag (use 50g)",
+          "use": "Bolognese; store the remaining dry lentils."
+        },
+        {
+          "id": "g5-4",
+          "name": "Oats",
+          "quantity": "Need 200g",
+          "use": "40g per breakfast; buy a larger pack if the unit price is better."
+        },
+        {
+          "id": "g5-5",
+          "name": "Unsalted walnuts",
+          "quantity": "Need 75g",
+          "use": "15g per breakfast; keep surplus sealed."
+        },
+        {
+          "id": "g5-6",
+          "name": "Olive or rapeseed oil",
+          "quantity": "Need about 8 tsp",
+          "use": "Shared base, curry, traybake, fishcakes, roast chicken and noodles."
+        },
+        {
+          "id": "g5-7",
+          "name": "Light soy sauce",
+          "quantity": "Need 2 tsp",
+          "use": "1 tsp rice + 1 tsp noodles."
+        },
+        {
+          "id": "g5-8",
+          "name": "Dark soy sauce (optional)",
+          "quantity": "Need ½ tsp",
+          "use": "For noodles; skip if you do not already have it."
+        },
+        {
+          "id": "g5-9",
+          "name": "Sesame oil",
+          "quantity": "Need 1 tsp",
+          "use": "½ tsp each rice and noodles."
+        },
+        {
+          "id": "g5-10",
+          "name": "Italian herbs",
+          "quantity": "Need 1 tsp",
+          "use": "Bolognese."
+        },
+        {
+          "id": "g5-11",
+          "name": "Smoked paprika",
+          "quantity": "Need 2½ tsp",
+          "use": "Chilli, traybake and lunch chicken."
+        },
+        {
+          "id": "g5-12",
+          "name": "Ground cumin",
+          "quantity": "Need 1 tsp",
+          "use": "Chilli."
+        },
+        {
+          "id": "g5-13",
+          "name": "Chilli powder",
+          "quantity": "Need ¼–½ tsp",
+          "use": "Adjust to taste."
+        },
+        {
+          "id": "g5-14",
+          "name": "Black pepper",
+          "quantity": "A little",
+          "use": "Check the cupboard first."
+        }
+      ]
+    }
+  ],
+  "week": [
+    [
+      "Monday",
+      "caesar",
+      "bolognese",
+      "Move Tuesday’s curry into the fridge. Make overnight oats."
+    ],
+    [
+      "Tuesday",
+      "pesto",
+      "curry",
+      "Make Wednesday’s egg & potato salad and oats."
+    ],
+    [
+      "Wednesday",
+      "potato",
+      "traybake",
+      "Make Thursday’s rice lunch and oats. Move chilli and raw noodle chicken into the fridge."
+    ],
+    [
+      "Thursday",
+      "rice",
+      "chilli",
+      "Cook Friday’s noodles and make oats. Move 2 fishcakes into the fridge."
+    ],
+    [
+      "Friday",
+      "noodles",
+      "fishcakes",
+      "Enjoy your dinner; 5 extra main-meal portions are ready for another week."
+    ]
+  ],
+  "prep": [
+    [
+      "Shopping day",
+      "Before you cook",
+      [
+        [
+          "Check the cupboards",
+          "Tick anything you already have on the shopping list before buying. Check dates on chicken, fish, sausages and yoghurt."
+        ],
+        [
+          "Put the surplus away",
+          "Freeze extra raw sausages and bread. Keep larger frozen packs frozen. Allow room for shallow containers and label them."
+        ]
+      ]
+    ],
+    [
+      "Saturday",
+      "Build the freezer base",
+      [
+        [
+          "Cook the shared beef base",
+          "Finish both bolognese and chilli sauces. Cool and freeze all 4 portions individually."
+        ],
+        [
+          "Make the fishcakes",
+          "Bake all 4. Cool and freeze in 2 packs of 2. Label each pack with its name and cooking date."
+        ]
+      ]
+    ],
+    [
+      "Sunday evening",
+      "Set up Monday & Tuesday",
+      [
+        [
+          "Cook the curry",
+          "Divide into 3 portions. Cool promptly and freeze all three."
+        ],
+        [
+          "Prepare the lunch chicken",
+          "Cook 2 portions for Monday and Tuesday. Freeze the third portion RAW, sliced, for Friday’s noodles."
+        ],
+        [
+          "Pack the first two lunches",
+          "Make Caesar pasta and pesto pasta. Keep dressings/croutons separate where directed. Refrigerate; eat within 48 hours."
+        ],
+        [
+          "Move Monday’s bolognese to the fridge",
+          "Thaw in a covered container. Make Monday’s oats."
+        ]
+      ]
+    ],
+    [
+      "Monday evening",
+      "A quick freezer move",
+      [
+        [
+          "Thaw Tuesday’s curry",
+          "Move one portion to the fridge."
+        ],
+        [
+          "Make Tuesday’s overnight oats",
+          "Check the yoghurt’s opened storage instructions."
+        ]
+      ]
+    ],
+    [
+      "Tuesday evening",
+      "Prepare Wednesday’s lunch",
+      [
+        [
+          "Pack the egg & potato Caesar salad",
+          "Boil eggs and potatoes, cook peas, cool and pack. Keep croutons and dressing separate."
+        ],
+        [
+          "Make Wednesday’s overnight oats",
+          "Everything ready before bed."
+        ]
+      ]
+    ],
+    [
+      "Wednesday evening",
+      "Fresh dinner & rice prep",
+      [
+        [
+          "Cook the sausage traybake",
+          "While the oven is on, prepare Thursday’s rice lunch."
+        ],
+        [
+          "Make the cold egg-fried rice",
+          "Cool and refrigerate within 1 hour. Eat within 24 hours."
+        ],
+        [
+          "Thaw chilli and raw chicken",
+          "Move Thursday’s chilli and Friday’s raw chicken portion into the fridge. Keep raw chicken covered below ready-to-eat food."
+        ],
+        [
+          "Make Thursday’s overnight oats",
+          "Pack an apple or banana too."
+        ]
+      ]
+    ],
+    [
+      "Thursday evening",
+      "Friday is ready to go",
+      [
+        [
+          "Cook the chow mein lunch",
+          "Use the defrosted raw chicken and the WHOLE tin of beansprouts. Cool promptly and refrigerate."
+        ],
+        [
+          "Thaw Friday’s fishcakes",
+          "Move one pack of 2 cakes to the fridge."
+        ],
+        [
+          "Make Friday’s overnight oats",
+          "Keep lunch chilled during travel and at work."
+        ]
+      ]
+    ],
+    [
+      "Friday evening",
+      "Finish the week",
+      [
+        [
+          "Reheat 2 fishcakes and cook the sides",
+          "Serve with 160g peas and 150g carrots."
+        ],
+        [
+          "Check next week’s freezer stock",
+          "There should be 1 bolognese, 1 chilli, 2 curry portions and 1 fishcake dinner left if you cooked the complete plan. Update your actual stock in the Freezer section."
+        ]
+      ]
+    ]
+  ]
+}
